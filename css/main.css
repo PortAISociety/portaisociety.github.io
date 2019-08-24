@@ -210,6 +210,10 @@ footer {
   margin-left: 1em;
 }
 
+.social:hover {
+  outline: 1px solid white;
+}
+
 footer a:hover {
   background-color: #ffffff00;
 }
