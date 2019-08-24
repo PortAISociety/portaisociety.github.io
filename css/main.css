@@ -92,8 +92,15 @@ header {
 
 #home img {
   background: rgba(255, 255, 255, 0.9);
-  border-radius: 2em;
+  border-radius: 1em;
   padding: 1em;
+  width: 40vw;
+}
+
+@media (max-width: 425px) {
+  #home img {
+    width: 70vw;
+  }
 }
 
 #home a {
