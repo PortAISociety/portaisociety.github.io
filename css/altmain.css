@@ -139,15 +139,14 @@ article {
   margin-right: 25%;
   margin-left: 25%;
   margin-bottom: 1%;
-  font-size: 15px;
 }
 
 .margin-bot {
-  margin-bottom: 35px;
+  margin-bottom: 3em;
 }
 
-.margin-bot2 {
-  margin-bottom: 35px;
+.margin-bot-small {
+  margin-bottom: 1em;
 }
 
 .margin-end {
