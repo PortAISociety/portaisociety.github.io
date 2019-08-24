@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font:normal 75% Arial, Helvetica, sans-serif;
+  font-family: sans-serif;
 }
 
 body a {
@@ -34,9 +34,9 @@ navbar
 nav {
   background-color: rgba(45, 132, 150, 0.644);
   position: absolute;
-  top:0em;
-  left:0em;
-  right:0em;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 nav a {
@@ -60,13 +60,11 @@ nav cite {
   font-size: 15px;
 }
 
-
 @media (max-width: 910px) {
   nav cite {
     display: none;
   }
 }
-
 
 .active {
   background-color: rgb(255, 255, 255);
@@ -153,7 +151,7 @@ main {
   background-color: rgb(241, 238, 238);
   position: absolute;
   color: black;
-  font-size: 18px;
+  font-size: 100%;
 }
 
 main article {
