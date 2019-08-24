@@ -188,25 +188,25 @@ var pJS = function(tag_id, params){
 
       window.addEventListener('resize', function(){
 
-          pJS.canvas.w = pJS.canvas.el.offsetWidth;
-          pJS.canvas.h = pJS.canvas.el.offsetHeight;
+        pJS.canvas.w = pJS.canvas.el.offsetWidth;
+        pJS.canvas.h = pJS.canvas.el.offsetHeight;
 
-          /* resize canvas */
-          if(pJS.tmp.retina){
-            pJS.canvas.w *= pJS.canvas.pxratio;
-            pJS.canvas.h *= pJS.canvas.pxratio;
-          }
+        /* resize canvas */
+        if(pJS.tmp.retina){
+          pJS.canvas.w *= pJS.canvas.pxratio;
+          pJS.canvas.h *= pJS.canvas.pxratio;
+        }
 
-          pJS.canvas.el.width = pJS.canvas.w;
-          pJS.canvas.el.height = pJS.canvas.h;
+        pJS.canvas.el.width = pJS.canvas.w;
+        pJS.canvas.el.height = pJS.canvas.h;
 
-          /* repaint canvas on anim disabled */
-          if(!pJS.particles.move.enable){
-            pJS.fn.particlesEmpty();
-            pJS.fn.particlesCreate();
-            pJS.fn.particlesDraw();
-            pJS.fn.vendors.densityAutoParticles();
-          }
+        /* repaint canvas on anim disabled */
+        if(!pJS.particles.move.enable){
+          pJS.fn.particlesEmpty();
+          pJS.fn.particlesCreate();
+          pJS.fn.particlesDraw();
+          pJS.fn.vendors.densityAutoParticles();
+        }
 
         /* density particles enabled */
         pJS.fn.vendors.densityAutoParticles();
@@ -308,31 +308,31 @@ var pJS = function(tag_id, params){
     switch(pJS.particles.move.direction){
       case 'top':
         velbase = { x:0, y:-1 };
-      break;
+        break;
       case 'top-right':
         velbase = { x:0.5, y:-0.5 };
-      break;
+        break;
       case 'right':
         velbase = { x:1, y:-0 };
-      break;
+        break;
       case 'bottom-right':
         velbase = { x:0.5, y:0.5 };
-      break;
+        break;
       case 'bottom':
         velbase = { x:0, y:1 };
-      break;
+        break;
       case 'bottom-left':
         velbase = { x:-0.5, y:1 };
-      break;
+        break;
       case 'left':
         velbase = { x:-1, y:0 };
-      break;
+        break;
       case 'top-left':
         velbase = { x:-0.5, y:-0.5 };
-      break;
+        break;
       default:
         velbase = { x:0, y:0 };
-      break;
+        break;
     }
 
     if(pJS.particles.move.straight){
@@ -417,49 +417,49 @@ var pJS = function(tag_id, params){
 
       case 'circle':
         pJS.canvas.ctx.arc(p.x, p.y, radius, 0, Math.PI * 2, false);
-      break;
+        break;
 
       case 'edge':
         pJS.canvas.ctx.rect(p.x-radius, p.y-radius, radius*2, radius*2);
-      break;
+        break;
 
       case 'triangle':
         pJS.fn.vendors.drawShape(pJS.canvas.ctx, p.x-radius, p.y+radius / 1.66, radius*2, 3, 2);
-      break;
+        break;
 
       case 'polygon':
         pJS.fn.vendors.drawShape(
-          pJS.canvas.ctx,
-          p.x - radius / (pJS.particles.shape.polygon.nb_sides/3.5), // startX
-          p.y - radius / (2.66/3.5), // startY
-          radius*2.66 / (pJS.particles.shape.polygon.nb_sides/3), // sideLength
-          pJS.particles.shape.polygon.nb_sides, // sideCountNumerator
-          1 // sideCountDenominator
+            pJS.canvas.ctx,
+            p.x - radius / (pJS.particles.shape.polygon.nb_sides/3.5), // startX
+            p.y - radius / (2.66/3.5), // startY
+            radius*2.66 / (pJS.particles.shape.polygon.nb_sides/3), // sideLength
+            pJS.particles.shape.polygon.nb_sides, // sideCountNumerator
+            1 // sideCountDenominator
         );
-      break;
+        break;
 
       case 'star':
         pJS.fn.vendors.drawShape(
-          pJS.canvas.ctx,
-          p.x - radius*2 / (pJS.particles.shape.polygon.nb_sides/4), // startX
-          p.y - radius / (2*2.66/3.5), // startY
-          radius*2*2.66 / (pJS.particles.shape.polygon.nb_sides/3), // sideLength
-          pJS.particles.shape.polygon.nb_sides, // sideCountNumerator
-          2 // sideCountDenominator
+            pJS.canvas.ctx,
+            p.x - radius*2 / (pJS.particles.shape.polygon.nb_sides/4), // startX
+            p.y - radius / (2*2.66/3.5), // startY
+            radius*2*2.66 / (pJS.particles.shape.polygon.nb_sides/3), // sideLength
+            pJS.particles.shape.polygon.nb_sides, // sideCountNumerator
+            2 // sideCountDenominator
         );
-      break;
+        break;
 
       case 'image':
 
-        function draw(){
-          pJS.canvas.ctx.drawImage(
+      function draw(){
+        pJS.canvas.ctx.drawImage(
             img_obj,
             p.x-radius,
             p.y-radius,
             radius*2,
             radius*2 / p.img.ratio
-          );
-        }
+        );
+      }
 
         if(pJS.tmp.img_type == 'svg'){
           var img_obj = p.img.obj;
@@ -471,7 +471,7 @@ var pJS = function(tag_id, params){
           draw();
         }
 
-      break;
+        break;
 
     }
 
@@ -581,7 +581,7 @@ var pJS = function(tag_id, params){
           else if (p.x - p.radius < 0) p.vx = -p.vx;
           if (p.y + p.radius > pJS.canvas.h) p.vy = -p.vy;
           else if (p.y - p.radius < 0) p.vy = -p.vy;
-        break;
+          break;
       }
 
       /* events */
@@ -747,14 +747,14 @@ var pJS = function(tag_id, params){
 
     for(var i = 0; i < nb; i++){
       pJS.particles.array.push(
-        new pJS.fn.particle(
-          pJS.particles.color,
-          pJS.particles.opacity.value,
-          {
-            'x': pos ? pos.pos_x : Math.random() * pJS.canvas.w,
-            'y': pos ? pos.pos_y : Math.random() * pJS.canvas.h
-          }
-        )
+          new pJS.fn.particle(
+              pJS.particles.color,
+              pJS.particles.opacity.value,
+              {
+                'x': pos ? pos.pos_x : Math.random() * pJS.canvas.w,
+                'y': pos ? pos.pos_y : Math.random() * pJS.canvas.h
+              }
+          )
       )
       if(i == nb-1){
         if(!pJS.particles.move.enable){
@@ -890,7 +890,7 @@ var pJS = function(tag_id, params){
             if(p_obj_bubble != undefined){
               var value_tmp = p_obj - (time_spent * (p_obj - bubble_param) / pJS.interactivity.modes.bubble.duration),
                   dif = bubble_param - value_tmp;
-                  value = bubble_param + dif;
+              value = bubble_param + dif;
               if(id == 'size') p.radius_bubble = value;
               if(id == 'opacity') p.opacity_bubble = value;
             }
@@ -1122,15 +1122,15 @@ var pJS = function(tag_id, params){
                   pJS.fn.modes.pushParticles(pJS.interactivity.modes.push.particles_nb);
                 }
               }
-            break;
+              break;
 
             case 'remove':
               pJS.fn.modes.removeParticles(pJS.interactivity.modes.remove.particles_nb);
-            break;
+              break;
 
             case 'bubble':
               pJS.tmp.bubble_clicking = true;
-            break;
+              break;
 
             case 'repulse':
               pJS.tmp.repulse_clicking = true;
@@ -1139,7 +1139,7 @@ var pJS = function(tag_id, params){
               setTimeout(function(){
                 pJS.tmp.repulse_clicking = false;
               }, pJS.interactivity.modes.repulse.duration*1000)
-            break;
+              break;
 
           }
 
@@ -1407,7 +1407,7 @@ var pJS = function(tag_id, params){
 Object.deepExtend = function(destination, source) {
   for (var property in source) {
     if (source[property] && source[property].constructor &&
-     source[property].constructor === Object) {
+        source[property].constructor === Object) {
       destination[property] = destination[property] || {};
       arguments.callee(destination[property], source[property]);
     } else {
@@ -1419,22 +1419,22 @@ Object.deepExtend = function(destination, source) {
 
 window.requestAnimFrame = (function(){
   return  window.requestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.mozRequestAnimationFrame    ||
-    window.oRequestAnimationFrame      ||
-    window.msRequestAnimationFrame     ||
-    function(callback){
-      window.setTimeout(callback, 1000 / 60);
-    };
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame    ||
+      window.oRequestAnimationFrame      ||
+      window.msRequestAnimationFrame     ||
+      function(callback){
+        window.setTimeout(callback, 1000 / 60);
+      };
 })();
 
 window.cancelRequestAnimFrame = ( function() {
   return window.cancelAnimationFrame         ||
-    window.webkitCancelRequestAnimationFrame ||
-    window.mozCancelRequestAnimationFrame    ||
-    window.oCancelRequestAnimationFrame      ||
-    window.msCancelRequestAnimationFrame     ||
-    clearTimeout
+      window.webkitCancelRequestAnimationFrame ||
+      window.mozCancelRequestAnimationFrame    ||
+      window.oCancelRequestAnimationFrame      ||
+      window.msCancelRequestAnimationFrame     ||
+      clearTimeout
 } )();
 
 function hexToRgb(hex){
@@ -1442,13 +1442,13 @@ function hexToRgb(hex){
   // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
   var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
   hex = hex.replace(shorthandRegex, function(m, r, g, b) {
-     return r + r + g + g + b + b;
+    return r + r + g + g + b + b;
   });
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16)
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
   } : null;
 };
 
