@@ -90,6 +90,21 @@ header {
   color: white;
 }
 
+#home img {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 2em;
+  padding: 1em;
+}
+
+#home a {
+  text-decoration: none;
+  color: white;
+}
+
+#home a:hover {
+  text-decoration: underline;
+}
+
 #style3 {
   font-style: cursive;
 }
