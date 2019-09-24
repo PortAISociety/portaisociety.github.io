@@ -78,7 +78,7 @@
             self.d = False
             </code></pre>
             <h3>Measuring Progress</h3>
-            <p>To decide which cars are doing best, we use a score function. This is a concept that will come up over and over within Artificial Intelligence as we go through the year. Score functions are pre-determined ways of measuring progress. In this example, we use the speed at which the cars have reached given checkpoints as our score function.</p>
+            <p>To decide which cars are doing best, we use a score function. This is a concept that will come up over and over within Artificial Intelligence as we go through the year. Score functions are pre-determined ways of measuring progress. In this example, we use the time taken to reach each checkpoint as our score function (lower is better).</p>
             <h2>Breeding Cars</h2>
             <p>Inside of <code class="language-">gaming_assembly.py</code>, you'll find two main functions: <code class="language-python">train()</code> and <code class="language-python">race()</code>. The train function will cycle through 40 one-minute generations, saving the best cars to a file each time. The race function would then take those best cars and race them around the track.</p>
             <p>What we're interested in today is the train function.</p>
