@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Artificial Intelligence & Robotics Society, University of Portsmouth</title>
+    <meta name="description" content="PortAISociety website.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../../img/favicon.png">
+    <link rel="stylesheet" href="../../../css/prism.css">
+    <link rel="stylesheet" href="../../../css/altmain.css">
+</head>
+<div id="particles">
+    <script src="../../../js/prism.js"></script>
+    <script src="../../../js/particles.js"></script>
+    <script src="../../../js/app.js"></script>
+    <script src="../../../js/tab.js"></script>
+
+    <nav>
+        <a href="../../../">Home</a>
+        <a href="../../../members">Committee Team</a>
+        <b><a href="../../">Sessions</a></b>
+        <a href="../../../researchseminars">Research Seminars</a>
+        <a href="../../../aboutus">About us</a>
+        <a href="https://membership.upsu.net/group/artificial-intelligence-robotics" target="_blank">Join us!</a>
+    </nav>
+
+    <header id="home">
+        <h1>Robotic Process Automation</h1>
+    </header>
+
+    <main>
+        <article class="margin-end">
+            <h2>Objective</h2>
+            <p>The goal of this session is to use the Selenium Web Automation framework to automate filling in web forms, then submitting the form.</p>
+            <h2>Installation & Setup</h2>
+            <p>We're using <a href="https://www.python.org/downloads/" target="_blank">Python3</a>. For this tutorial you will need to use an editor of your choice - whilst Notepad would technically work we recommend getting an actual IDE (or Integrated Development Environment; a fancy way of saying "code editor") such as <a href="https://jetbrains.com/student" target="_blank">PyCharm</a>.</p>
+            <p>We are also using a single Python Library, <a href="https://selenium-python.readthedocs.io" target="_blank">Selenium</a>, and a Web Driver, which depends on your Browser. The Selenium Library can be installed by typing the following into your terminal (Requires Python to be Installed):</p>
+            <pre><code class="language-">pip install selenium</code></pre>
+            <h3>Web Driver</h3>
+            <p>Now the Web Driver you install depends on which Browser you are using, in this tutorial I have instructions for Safari, Edge and Firefox, but if you want to use another Browser you will need to install the Web Driver from the following link: <a href="https://www.seleniumhq.org/download/" target="_blank">Selenium WebDriver</a></p>
+            <div class="tab-container">
+                <button class="tab-button" onclick="openTab('Firefox')">Firefox</button>
+                <button class="tab-button" onclick="openTab('Safari')">Safari</button>
+                <button class="tab-button" onclick="openTab('Edge')">Edge</button>
+
+      
+
+                <div id="Firefox" class="tab-item">
+                    <h3>Firefox</h3>
+                    <p>Firstly go to the Firefox Gecko Webdriver page: <a href="https://github.com/mozilla/geckodriver/releases">GeckoDriver</a></p>
+                    <p>Scroll to the 'Assets' subsection and click on the relevant file</p>
+                    <p>Once downloaded, extract the Zip to the Desktop</p>
+                    <p>Run the Executable and you have installed the driver</p>
+                </div>
+                  
+                <div id="Safari" class="tab-item">
+                    <h3>Safari</h3>
+                    <p>Firstly enable Developer mode on Safari - Safari > Preferences > Advanced > Then tick the 'Show Develop menu in menu bar' checkbox</p> 
+                    <p>Now you'll need to open a terminal and type:</p>
+                    <pre><code class="language-">safaridriver --enable</code></pre>
+                    <p>Finally in Safari click on the Develop dropdown menu and Allow Remove Automation</p>
+                    <p>You have now enabled the driver</p>
+                    
+                    
+                </div>
+                  
+                <div id="Edge" class="tab-item">
+                    <h3>Edge</h3>
+                    <p>Firstly enable Developer mode on Edge - Go to Settings > Update and Security > For Developer and then select 'Developer mode'.</p>
+                    <p>Now you'll need to open a command prompt and type:</p>
+                    <pre><code class="language-">DISM.exe /Online /Add-Capability /CapabilityName:Microsoft.WebDriver~~~~0.0.1.0</code></pre>
+                    <p>You have now enabled the driver</p>
+
+
+                </div>
+
+            </div>
+
+            <h2>Writing some Code</h2>
+            <p>Now that you have installed both the Selenium Library and the WebDriver for your browser, we are ready to start coding!</p>
+            <p>Start by opening up the IDE of your choice, and creating a new file/project.</p>
+            <p>The first thing we want to do is import the relevant Selenium libraries. We also want to import the <code class="language-">time</code> module so we can introduce delays.</p>
+            <pre><code class="language-python">
+from selenium.webdriver.common.by import By
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import unittest
+import time
+            </code></pre>
+            <p>After importing the libraries, we need to create a Driver variable to reference throughout the program. This depends on which Browser you use:</p>
+            <pre><code class="language-">SafariWebDriver = webdriver.Safari()</code></pre>
+            <pre><code class="language-">FirefoxWebDriver = webdriver.Firefox()</code></pre>
+            <pre><code class="language-">EdgeWebDriver = webdriver.Edge()</code></pre>
+            <p>So now we have a WebDriver ready to use, so how do we use it? It's quite easy really, it just uses CSS to determine what to click/type into etc.</p>
+            <h3>Using Inspect Element</h3>
+            <p>To use Selenium with a website, you need to know the structure of the webpage itself</p>
+            <p>Start by <b>right clicking</b> on a webpage, It will show an option called Inspect Element. Click this.</p>
+            <p>Now you will be able ot see the structure of a webpage.</p>
+            <img src="../../../img/rpa/upsu-inspectelement.png" alt="Inspect Element on upsu.net, Union website" class="resize">
+            <p>From this structure you can see class names, id's and the general structure. Now we can start to automate the process.</p>
+            <div class="session-information-green">
+                <p>Visit: <a href=""><b>This Form</b></a> and use the examples below to automatically fill in the form!</p>
+            </div>
+            <pre><code class="language-python">
+#Connect to a website
+WebDriver.get("www.website.com")
+
+#Find an Element by ID
+item = WebDriver.find_element_by_id('id')
+
+#Find Element by Class Name
+item = WebDriver.find_element_by_class_name('class')
+
+#Find Elements by Path 
+item = WebDriver.find_elements_by_xpath("css-path")
+
+#Enter text into textbox
+item.send_keys('some text')
+
+#Click a button
+item.click()
+
+#Wait for x seconds
+time.sleep(x)
+            </code></pre>
+
+        </article>
+        </main>
+
+    <footer>
+        <a href="https://www.facebook.com/PortAISociety/" target="_blank"><img class="social" src="../../../img/fb-icon.png" alt="Facebook Link"/></a>
+        <a href="https://www.twitter.com/PortAISociety/" target="_blank"><img class="social" src="../../../img/tw-icon.png" alt="Twitter Link"/></a>
+        <a href="https://instagram.com/PortAISoc/" target="_blank"><img class="social" src="../../../img/ig-icon.png" alt="Instagram Link"></a>
+        <a href="https://www.github.com/PortAISociety/" target="_blank"><img class="social" src="../../../img/gh-icon.png" alt="GitHub Link"/></a>
+        <a href="https://discord.gg/xbW7n8f" target="_blank"><img class="social" src="../../../img/ds.png" alt="Discord Link"/></a>
+        <a href="https://www.linkedin.com/company/PortAISociety/" target="_blank"><img class="social" src="../../../img/li-icon.png" alt="LinkedIn Link"/></a>
+    </footer>
+</div>
+</html>
