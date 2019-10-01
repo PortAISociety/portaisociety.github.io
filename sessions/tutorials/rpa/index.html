@@ -38,28 +38,27 @@
             <pre><code class="language-">pip install selenium</code></pre>
             <h3>Web Driver</h3>
             <p>Now the Web Driver you install depends on which Browser you are using, in this tutorial I have instructions for Safari, Edge and Firefox, but if you want to use another Browser you will need to install the Web Driver from the following link: <a href="https://www.seleniumhq.org/download/" target="_blank">Selenium WebDriver</a></p>
-            <div class="tab-container">
+            <div class="tab-container session-information-blue">
                 <button class="tab-button" onclick="openTab('Firefox')">Firefox</button>
                 <button class="tab-button" onclick="openTab('Safari')">Safari</button>
                 <button class="tab-button" onclick="openTab('Edge')">Edge</button>
-
-      
 
                 <div id="Firefox" class="tab-item">
                     <h3>Firefox</h3>
                     <p>Firstly go to the Firefox Gecko Webdriver page: <a href="https://github.com/mozilla/geckodriver/releases">GeckoDriver</a></p>
                     <p>Scroll to the 'Assets' subsection and click on the relevant file</p>
-                    <p>Once downloaded, extract the Zip to the Desktop</p>
-                    <p>Run the Executable and you have installed the driver</p>
+                    <p>Once downloaded, extract the Zip and place <b>geckodriver.exe</b> into the Python3.7 Scripts folder.</p>
+                    <p>The driver is now installed, restart your computer and you are ready to go!</p>
+                    
                 </div>
                   
-                <div id="Safari" class="tab-item">
+                <div id="Safari" class="tab-item" >
                     <h3>Safari</h3>
                     <p>Firstly enable Developer mode on Safari - Safari > Preferences > Advanced > Then tick the 'Show Develop menu in menu bar' checkbox</p> 
                     <p>Now you'll need to open a terminal and type:</p>
                     <pre><code class="language-">safaridriver --enable</code></pre>
                     <p>Finally in Safari click on the Develop dropdown menu and Allow Remove Automation</p>
-                    <p>You have now enabled the driver</p>
+                    <p>You have now enabled the driver, restart your computer and you are ready to go!</p>
                     
                     
                 </div>
@@ -67,10 +66,9 @@
                 <div id="Edge" class="tab-item">
                     <h3>Edge</h3>
                     <p>Firstly enable Developer mode on Edge - Go to Settings > Update and Security > For Developer and then select 'Developer mode'.</p>
-                    <p>Now you'll need to open a command prompt and type:</p>
+                    <p>Now you'll need to open a command prompt in Administrator mode and type:</p>
                     <pre><code class="language-">DISM.exe /Online /Add-Capability /CapabilityName:Microsoft.WebDriver~~~~0.0.1.0</code></pre>
-                    <p>You have now enabled the driver</p>
-
+                    <p>You have now enabled the driver, restart your computer and you are ready to go!</p>
 
                 </div>
 
@@ -95,31 +93,37 @@ import time
             <h3>Using Inspect Element</h3>
             <p>To use Selenium with a website, you need to know the structure of the webpage itself</p>
             <p>Start by <b>right clicking</b> on a webpage, It will show an option called Inspect Element. Click this.</p>
-            <p>Now you will be able ot see the structure of a webpage.</p>
-            <img src="../../../img/rpa/upsu-inspectelement.png" alt="Inspect Element on upsu.net, Union website" class="resize">
-            <p>From this structure you can see class names, id's and the general structure. Now we can start to automate the process.</p>
+            <p>Now you will be able to see the structure of a webpage.</p>
+            <img src="../../../img/rpa/inspect-element.png" alt="Inspect Element on upsu.net, Union website" class="resize">
+            <p>From this structure you can see class names, denoted by <code class="language-html">class="someclass"</code>, id's, denotoed by <code class="language-html">id="someid"</code> and the general structure. Now we can start to automate the process.</p>
             <div class="session-information-green">
-                <p>Visit: <a href=""><b>This Form</b></a> and use the examples below to automatically fill in the form!</p>
+                <p>Visit: <a href="./testsite/"><b>This Form</b></a> and use the examples below, or follow me on the screen, to automatically fill in the form!</p>
             </div>
             <pre><code class="language-python">
 #Connect to a website
 WebDriver.get("www.website.com")
-
+            </code></pre>
+            <pre><code class="language-python">
 #Find an Element by ID
 item = WebDriver.find_element_by_id('id')
-
+            </code></pre>
+            <pre><code class="language-python">
 #Find Element by Class Name
 item = WebDriver.find_element_by_class_name('class')
-
+            </code></pre>
+            <pre><code class="language-python">
 #Find Elements by Path 
 item = WebDriver.find_elements_by_xpath("css-path")
-
+            </code></pre>
+            <pre><code class="language-python">
 #Enter text into textbox
 item.send_keys('some text')
-
+            </code></pre>
+            <pre><code class="language-python">
 #Click a button
 item.click()
-
+            </code></pre>
+            <pre><code class="language-python">
 #Wait for x seconds
 time.sleep(x)
             </code></pre>
