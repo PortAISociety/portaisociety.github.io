@@ -501,13 +501,28 @@ Competitions banner
   text-align: left;
 }
 
+#tabs {
+  display: flex;
+  width: 75%;
+  justify-content: space-between;
+}
 
+.tab-section {
+  background-color: rgb(206, 238, 252);
+  border-left: 6px solid rgb(92, 92, 252);
+  padding-bottom: 1em;
+}
 
 .tab-item {
   display: none;
+  padding-left: 1em;
 }
 
 .tab-button {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  margin-right: 1em;
   background-color: rgba(45, 132, 150, 0.644);
   color: white;
   font-weight: bold;
@@ -515,12 +530,20 @@ Competitions banner
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 33.333%;
-
+  font-size: 100%;
+  padding: 0.7em;
 }
 
+.tab-button.button-active {
+  background-color: rgba(62, 205, 226, 0.64);
+  text-decoration: underline;
+  color: white;
+  font-weight: bold;
+  float: left;
+  border-bottom: 0.4em solid white;
+  outline: none;
+  cursor: pointer;
+}
 
 .tab-button:hover {
   background-color: rgb(32, 71, 83);
