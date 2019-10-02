@@ -34,9 +34,11 @@
             <p>The goal of this session is to use the Selenium Web Automation framework to automate filling in web forms, then submitting the form.</p>
             <h2>Installation & Setup</h2>
             <p>We're using <a href="https://www.python.org/downloads/" target="_blank">Python3</a>. For this tutorial you will need to use an editor of your choice - whilst Notepad would technically work we recommend getting an actual IDE (or Integrated Development Environment; a fancy way of saying "code editor") such as <a href="https://jetbrains.com/student" target="_blank">PyCharm</a>.</p>
-            <p>We are also using a single Python Library, <a href="https://selenium-python.readthedocs.io" target="_blank">Selenium</a>, and a Web Driver, which depends on your Browser. The Selenium Library can be installed by typing the following into your terminal (Requires Python to be Installed):</p>
+            <p>We are also using a single Python Library, <a href="https://selenium-python.readthedocs.io" target="_blank">Selenium</a>, and a Web Driver, which depends on your Browser. </p>
+            <p>We will need to use a Terminal to install this. To get to Terminal, search <code class='language-'>cmd</code> on Windows, or <code class='language-'>terminal</code> on MacOS. This is a text based way of controlling your computer. The Selenium Library can be installed by typing the following into your terminal: (Requires Python to be Installed)</p>
             <pre><code class="language-">pip install selenium</code></pre>
             <h3>Web Driver</h3>
+            <p>To use Selenium we will need to install a Web Driver, a Web Driver is a tool which allows us to remotely access, and conrol, a web browser. We will need this for todays exercise. </p>
             <p>Now the Web Driver you install depends on which Browser you are using, in this tutorial I have instructions for Safari, Edge and Firefox, but if you want to use another Browser you will need to install the Web Driver from the following link: <a href="https://www.seleniumhq.org/download/" target="_blank">Selenium WebDriver</a></p>
             <div class="tab-container session-information-blue">
                 <button class="tab-button" onclick="openTab('Firefox')">Firefox</button>
@@ -48,10 +50,11 @@
                     <p>Firstly go to the Firefox Gecko Webdriver page: <a href="https://github.com/mozilla/geckodriver/releases">GeckoDriver</a></p>
                     <p>Scroll to the 'Assets' subsection and click on the relevant file</p>
                     <p>Once downloaded, extract the Zip and place <b>geckodriver.exe</b> into the Python3.7 Scripts folder.</p>
+                    <p>The Scripts folder can be found in your Python3.7 download, on Windows this is typically at</p><p><code class='language-'>C:\Users\Username\AppData\Programs\Python\Python37\Scripts</code></p>
                     <p>The driver is now installed, restart your computer and you are ready to go!</p>
                     
                 </div>
-                  
+
                 <div id="Safari" class="tab-item" >
                     <h3>Safari</h3>
                     <p>Firstly enable Developer mode on Safari - Safari > Preferences > Advanced > Then tick the 'Show Develop menu in menu bar' checkbox</p> 
@@ -95,7 +98,7 @@ import time
             <p>Start by <b>right clicking</b> on a webpage, It will show an option called Inspect Element. Click this.</p>
             <p>Now you will be able to see the structure of a webpage.</p>
             <img src="../../../img/rpa/inspect-element.png" alt="Inspect Element on upsu.net, Union website" class="resize">
-            <p>From this structure you can see class names, denoted by <code class="language-html">class="someclass"</code>, id's, denotoed by <code class="language-html">id="someid"</code> and the general structure. Now we can start to automate the process.</p>
+            <p>From this structure you can see class names, denoted by <code class="language-html">class="someclass"</code>, id's, denoted by <code class="language-html">id="someid"</code> and the general structure. Now we can start to automate the process.</p>
             <div class="session-information-green">
                 <p>Visit: <a href="./testsite/"><b>This Form</b></a> and use the examples below, or follow me on the screen, to automatically fill in the form!</p>
             </div>
