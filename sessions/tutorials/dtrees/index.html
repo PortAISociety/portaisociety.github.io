@@ -87,7 +87,7 @@ iris = load_iris()  # Load iris dataset to variable
 classifier = tree.DecisionTreeClassifier()  # Create a "Classifier" variable, using the library we imported
 classifier = classifier.fit(iris.data, iris.target) # Tell the classifier to "fit" the data - creating the internal decision tree
 
-tree.plot_tree(classifier.fit(iris.data, iris.target))  # Print the tree to console</code></pre>
+print(tree.plot_tree(classifier.fit(iris.data, iris.target)))  # Print the tree to console</code></pre>
             <p>Again, let's break the code down line by line:</p>
             <p>The first two lines import the necessary libraries.</p>
             <p>As before, we then store the dataset to a variable, <code class="language-">iris</code>.</p>
