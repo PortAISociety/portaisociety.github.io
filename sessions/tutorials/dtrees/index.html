@@ -108,7 +108,7 @@ classifier = classifier.fit(iris.data, iris.target) # Tell the classifier to "fi
 
 tree.plot_tree(classifier.fit(iris.data, iris.target))  # Plot the tree internally
 result = export_text(classifier, feature_names=iris['feature_names'])   # Export it in a human-readable format
-print(result) # Print the tree in the human generated format</code></pre>
+print(result) # Print the tree in the human readable format</code></pre>
             <p>This time, we've imported one additional library at the top, and changed our export code at the bottom.</p>
             <p>These changes are mostly self explanatory but I will note the <code class="language-">export_text</code> function. This function takes two parameters: the classifier variable and the "feature names" of the tree. "Feature names" are stored in the iris dataset and are used to label the tree, without them it still wouldn't be readable by us (try it).</p>
             <h2>Further adaptation</h2>
