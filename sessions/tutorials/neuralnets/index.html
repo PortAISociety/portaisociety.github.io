@@ -42,7 +42,7 @@
             <p>You will also need to download some test data. This comes in the form of compressed text files which can be downloaded <a href="https://drive.google.com/open?id=1fMCYHBMB5YwU8khAdbXfbiBuprjPgE9y">from our Google Drive</a>. Please make sure to decompress the folder to an easy-to-reach location on your computer.</p>
             <p>This practical is based on the example code from <a href="https://github.com/minimaxir/textgenrnn">the textgenrnn Github repository</a>.</p>
             
-            <h2>Getting Started</h2>
+            <h2>Let's Get Coding!</h2>
             <p>Last week we learned about decision trees - a structure that queries some input data with basic questions and decisions to produce a suitable output.</p>
             <p>This week, we're learning about neural networks, which are a step up from a decision tree. A neural network takes some input data and passes it through a series of "neurons" to produce some kind of output.</p>
             <p>Each neuron is actually a mathematical function that alters the input data. The result is then passed to the next neurons.</p>
@@ -70,7 +70,20 @@ What is your finance was selling the background and contest it will stop seeing 
 Don't stop twittering a person to come on the start of the same shotgun and have no idea what to do anything!
             </code></pre>
             <p>There are words in an order and it even knows to end a sentence with punctuation! But it doesn't make any sense. What it needs is some training on how to write properly. So let's give it some examples!</p>
-            
+            <p>For this you will need to have downloaded the <a href="https://drive.google.com/open?id=1fMCYHBMB5YwU8khAdbXfbiBuprjPgE9y">datasets zip file</a> from our Google Drive. Make sure to decompress it and put the folder in a place that you can get to easily.</p>
+            <p>Add the following code to your file.</p>
+            <pre><code class="language-python">
+# Train the neural network on some data
+txtgn.train_from_file('path_to_your_dataset_folder/datasets/hacker_news_2000.txt', num_epochs=1)
+
+# Generate some text based on the trained network
+txtgn.generate()
+            </code></pre>
+            <p>For this to work you will need to get the filepath for your datasets folder. This is done differently between Mac, Windows, and Linux devices, so if you need any help, please ask a committee member.
+                Where it says <code class="language-python">'path_to_your_dataset_folder'</code>, put the file path for this folder. Otherwise, Python will not be able to access the training data.
+            </p>
+            <p>When you run this code, it will take longer than usual. This is because the network is being trained. Each neuron has a weight that can be adjusted. By adjusting the weight of each neuron and the connections they have with each other, you can fine-tune the network to become better at what it does.</p>
+            <p>That's the important thing to remember: Neural networks are very good at doing one thing.</p>
         </article>
     </main>
 
