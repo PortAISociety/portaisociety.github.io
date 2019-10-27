@@ -111,6 +111,19 @@ header article a{
   margin-bottom: 2em
 }
 
+button  {
+  text-align: center;
+  font-size: 1em;
+  padding: .25em;
+  display: flex;
+  border-radius: .5em;
+}
+
+button:hover  {
+  background-color: rgb(32, 71, 83);
+  cursor: pointer;
+}
+
 
 /* ----
 main content
