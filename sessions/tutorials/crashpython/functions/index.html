@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Artificial Intelligence & Robotics Society, University of Portsmouth</title>
+    <meta name="description" content="PortAISociety website.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../../../img/favicon.png">
+    <link rel="stylesheet" href="../../../../css/prism.css">
+    <link rel="stylesheet" href="../../../../css/altmain.css">
+</head>
+<div id="particles">
+    <script src="../../../../js/prism.js"></script>
+    <script src="../../../../js/particles.js"></script>
+    <script src="../../../../js/app.js"></script>
+
+    <nav>
+        <a href="../../../../">Home</a>
+        <a href="../../../../members">Committee Team</a>
+        <b><a href="../../../">Sessions</a></b>
+        <a href="../../../../researchseminars">Research Seminars</a>
+        <a href="../../../../aboutus">About us</a>
+        <a href="https://membership.upsu.net/group/artificial-intelligence-robotics" target="_blank">Join us!</a>
+    </nav>
+
+    <header id="home">
+        <h1>Part 5: Functions</h1>
+    </header>
+
+    <main>
+        <article class="margin-end">
+
+
+
+        <a href="../../crashpython">Back to course contents</a>
+
+            <h2>Summary</h2>
+            <p>A function is a named store of code, allowing that code to be used multiple times across a program. You define a function using the ‘def’ keyword, and call it by using its name. Parameters allow you to pass data into a function using variables named in parentheses when you define the function. The return keyword allows you to get data out of a function.</p>
+
+            <h2>Examples</h2>
+            <pre><code class="language-python">
+# Basic function example
+def say_hello():
+    print("Hello")
+
+
+# Calling example function
+say_hello()
+            </code></pre>
+            <pre><code class="language-python">
+# Parameter example
+def say_number(number):
+    print(number)
+
+
+number = 5
+say_number(42)
+print(number)
+            </code></pre>
+            <pre><code class="language-python">
+# Return example
+def multiply(x, y):
+    z = x * y
+    return z
+
+
+i = multiply(5, 3)
+print(multiply(3, 2))
+            </code></pre>
+            <pre><code class="language-python">
+# Branching return example
+def max_of(x, y):
+    if x > y:
+        return x
+    elif x < y:
+        return y
+    else:
+        return 0
+            </code></pre>
+
+            <h2>Exercises</h2>
+            <ol>
+                <li>
+                    <p>The force needed to crush a pumpkin is 500N! Write a function that takes the mass and velocity of a falling boulder and works out its force using 0.5 * mass * velocity^2. The function should then return whether or not the boulder would crush the pumpkin.</p>
+                </li>
+                <li>
+                    <p>A group of spoopy skeleton scientists want to know whether the rocks they have could crush a pumpkin depending on their velocity. The boulders range from 10kg to 100kg in 10kg steps, and the skeletons can get them from 0 meters per second up to speeds of 10 meters per second. Create a program that works out which of these boulders could crush a pumpkin and what velocity they would need to be going at.</p>
+                    <p>Hint: You can nest for-loops inside one another.</p>
+                </li>
+            </ol>
+            
+        </article>
+    </main>
+
+    <footer>
+            <a href="https://www.facebook.com/PortAISociety/" target="_blank"><img class="social" src="../../../../img/fb-icon.png" alt="Facebook Link"/></a>
+            <a href="https://www.twitter.com/PortAISociety/" target="_blank"><img class="social" src="../../../../img/tw-icon.png" alt="Twitter Link"/></a>
+            <a href="https://instagram.com/PortAISoc/" target="_blank"><img class="social" src="../../../../img/ig-icon.png" alt="Instagram Link"></a>
+            <a href="https://www.github.com/PortAISociety/" target="_blank"><img class="social" src="../../../../img/gh-icon.png" alt="GitHub Link"/></a>
+            <a href="https://discord.gg/xbW7n8f" target="_blank"><img class="social" src="../../../../img/ds.png" alt="Discord Link"/></a>
+            <a href="https://www.linkedin.com/company/PortAISociety/" target="_blank"><img class="social" src="../../../../img/li-icon.png" alt="LinkedIn Link"/></a>
+    </footer>
+</div>
+</html>

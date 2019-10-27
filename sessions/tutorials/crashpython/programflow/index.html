@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Artificial Intelligence & Robotics Society, University of Portsmouth</title>
+    <meta name="description" content="PortAISociety website.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../../../img/favicon.png">
+    <link rel="stylesheet" href="../../../../css/prism.css">
+    <link rel="stylesheet" href="../../../../css/altmain.css">
+</head>
+<div id="particles">
+    <script src="../../../../js/prism.js"></script>
+    <script src="../../../../js/particles.js"></script>
+    <script src="../../../../js/app.js"></script>
+
+    <nav>
+        <a href="../../../../">Home</a>
+        <a href="../../../../members">Committee Team</a>
+        <b><a href="../../../">Sessions</a></b>
+        <a href="../../../../researchseminars">Research Seminars</a>
+        <a href="../../../../aboutus">About us</a>
+        <a href="https://membership.upsu.net/group/artificial-intelligence-robotics" target="_blank">Join us!</a>
+    </nav>
+
+    <header id="home">
+        <h1>Part 3: Program Flow</h1>
+    </header>
+
+    <main>
+        <article class="margin-end">
+
+
+
+            <a href="../../crashpython">Back to course contents</a>
+
+            <h2>Summary</h2>
+            <p>A comparator compares two values and returns a boolean value as to whether the statement is true or false. The different comparators are equal to (==), not equal to (!=), less than (<), greater than (>), less than or equal to (<=), and greater than or equal to (>=). If-statements allow you to selectively trigger code and create branching programs. While loops allow you to loop over a section of code until a condition is no longer true. You create an infinite loop by using a condition that is never false for the loop, which is a bad idea.</p>
+
+            <h2>Examples</h2>
+            <pre><code class="language-python">
+# Example if-statement
+name = input("What is your name? ")
+
+if name == "Sam":
+    print("Hello, Sam!")
+
+elif name == "Carmen":
+    print("Welcome, Carmen!")
+
+elif name == "Geralt":
+    print("Welcome, Gwynbleidd")
+
+elif name == "Dovahkiin":
+    print("I used to be an adventurer like you...")
+
+else:
+    print("I don't recognise that name...")
+
+print("Nice to meet you.")
+            </code></pre>
+            <pre><code class="language-python">
+# Example while-loop
+count = 0
+while count <= 10:
+    if count == 5:
+        print(count)
+    else:
+        print("hi")
+
+    count = count + 1
+
+print("The loop is broken!")
+            </code></pre>
+            <pre><code class="language-python">
+# Example of nested loops
+count = 0
+i = 0
+while count <= 5:
+    if count == 5:
+        while i < 3:
+            print(i)
+            i = i + 1
+    print("spinning")
+    count = count + 1
+print("Finished spinning!")
+            </code></pre>
+            <pre><code class="language-python">
+# Example of break keyword
+count = 0
+while True:
+    print("Help!")
+    count = count + 1
+    if count == 20:
+        break
+print("Thanks for saving me!")
+            </code></pre>
+
+            <h2>Exercises</h2>
+            <ol>
+                <li>
+                    <p>Are you a cat person or a dog person? Is your user? Create a program that asks the user whether they prefer cats or dogs and tells them if you agree.</p>
+                </li>
+                <li>
+                    <p>You are designing a system to protect the secret ingredient of your favourite recipe and have decided a password would protect it best. Create a program that, while the user gets the password wrong, they can’t see the secret.</p>
+                    <p>Hint: You can update variables from outside the loop inside the loop.</p>
+                </li>
+            </ol>
+            
+        </article>
+    </main>
+
+    <footer>
+            <a href="https://www.facebook.com/PortAISociety/" target="_blank"><img class="social" src="../../../../img/fb-icon.png" alt="Facebook Link"/></a>
+            <a href="https://www.twitter.com/PortAISociety/" target="_blank"><img class="social" src="../../../../img/tw-icon.png" alt="Twitter Link"/></a>
+            <a href="https://instagram.com/PortAISoc/" target="_blank"><img class="social" src="../../../../img/ig-icon.png" alt="Instagram Link"></a>
+            <a href="https://www.github.com/PortAISociety/" target="_blank"><img class="social" src="../../../../img/gh-icon.png" alt="GitHub Link"/></a>
+            <a href="https://discord.gg/xbW7n8f" target="_blank"><img class="social" src="../../../../img/ds.png" alt="Discord Link"/></a>
+            <a href="https://www.linkedin.com/company/PortAISociety/" target="_blank"><img class="social" src="../../../../img/li-icon.png" alt="LinkedIn Link"/></a>
+        </footer>
+</div>
+</html>
