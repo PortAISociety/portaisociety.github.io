@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Artificial Intelligence & Robotics Society, University of Portsmouth</title>
+    <meta name="description" content="PortAISociety website.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../../img/favicon.png">
+    <link rel="stylesheet" href="../../../css/prism.css">
+    <link rel="stylesheet" href="../../../css/altmain.css">
+</head>
+<div id="particles">
+    <script src="../../../js/prism.js"></script>
+    <script src="../../../js/particles.js"></script>
+    <script src="../../../js/app.js"></script>
+
+    <nav>
+        <a href="../../../">Home</a>
+        <a href="../../../members">Committee Team</a>
+        <b><a href="../../">Sessions</a></b>
+        <a href="../../../researchseminars">Research Seminars</a>
+        <a href="../../../aboutus">About us</a>
+        <a href="https://membership.upsu.net/group/artificial-intelligence-robotics" target="_blank">Join us!</a>
+    </nav>
+
+    <header id="home">
+        <h1>Text Sentiment Analysis</h1>
+    </header>
+
+    <main>
+        <article class="margin-end">
+
+
+            <h2>Objective</h2>
+            <p>This session we will be using the Natural Language TookKit (NLTK) to train a Text Sentiment Analysis classification model, and then using it to determine if Movie Reviews are positive or negative.</p>
+            
+            <h2>Installation & Setup</h2>
+            <p>As always, we're using <a href="https://www.python.org/downloads/">Python3</a>. We will be using Python for the foreseeable future, so please ensure you have it installed.</p>
+            <p>In this session we will be using a single Python library: nltk. It can be installed from the command prompt or terminal using the following command:</p>
+            <pre><code class="language-">pip install nltk</code></pre>
+            <p>As always, if you run into issues when installing these libraries, please ask a committee member for help.</p>            
+            <h2>Let's Get Coding!</h2>
+            <p>This week we are learning about sentiment analysis, the way computers can identify emotions from a given source, usually text or video.</p>
+            <p>We will be using a Naive Bayes classificaiton model - don't worry you don't need to know what this is! But if you're interested <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier" target="_blank">click here</a></a>.</p>
+            <p>To demonstrate, let's have a play with the NLTK library. NLTK (Natural Language ToolKit) is an easy to use platform for building Python programs that work with human language data</p>
+            <p>First step is importing the required features.</p>
+
+            <pre><code class="language-python">
+# Importing the required methods and structures from nltk
+import nltk.classify.util
+from nltk.classify import NaiveBayesClassifier
+from nltk.corpus import movie_reviews
+
+# Downloading the movie reviews dataset
+nltk.download('movie_reviews')
+            </code></pre>
+            <p>This will allow you to access the library's resources.</p>
+            <p>Next, we will write a function to extract the key words that determine if a review is positive or negative.</p>
+            <p>Paste the below code at the bottom of your Python file</p>
+            <pre><code class="language-python">
+# Extracting key words from dataset
+def extract_features(word_list):
+    return dict([(word, True) for word in word_list])
+            </code></pre>
+            <p>Now that we have a function to work with the dataset, we can now begin to build our model.</p>
+            <p>First we want to split the reviews into positive and negative. From now on all code is whithin this if statement. </p>
+            <p>Paste the below code at the bottom of your Python file</p>
+            <pre><code class="language-python">
+if __name__=='__main__':
+    # Load positive and negative reviews  
+    positive_fileids = movie_reviews.fileids('pos')
+    negative_fileids = movie_reviews.fileids('neg')
+            </code></pre>
+            <p>Next we will be using our extract_features function to take these reviews and gather the key words for both positive and negative.</p>
+            <p>Paste the below code at the bottom of your Python file</p>
+            <pre><code class="language-python">
+# Gathering Positive key words
+    features_positive = [(extract_features(movie_reviews.words(fileids=[f])), 'Positive') for f in positive_fileids]
+# Gathering Negative key words
+    features_negative = [(extract_features(movie_reviews.words(fileids=[f])), 'Negative') for f in negative_fileids]
+            </code></pre>
+            <p>Okay now we have our data prepared to train our model! But how do we do this?</p>
+            <p>First we need to decide what percentage of our data is being used to train the model, play around with this value and see if you can get a more accurate model! I am using 80% Training data.</p>
+            <p>Paste the below code at the bottom of your Python file</p>
+            <pre><code class="language-python">
+# Determine the threshold factor to use (80/20)
+    threshold_factor = 0.8
+    threshold_positive = int(threshold_factor * len(features_positive))
+    threshold_negative = int(threshold_factor * len(features_negative))
+            </code></pre>
+            <p>Next we are going to use these thresholds to split the key words into training and test datasets.</p>
+            <p>Paste the below code at the bottom of your Python file</p>
+            <pre><code class="language-python">
+# Split the data into test and training lists
+    features_train = features_positive[:threshold_positive] + features_negative[:threshold_negative]
+    features_test = features_positive[threshold_positive:] +     features_negative[threshold_negative:]  
+    print ("\nNumber of training datapoints:", len(features_train))
+    print ("Number of test datapoints:", len(features_test))
+
+            </code></pre>
+            <p>Now, after we have setup everything, we can train and use our model!</p>
+            <p>Paste the below code at the bottom of your Python file</p>
+            <pre><code class="language-python">
+# Train a Naive Bayes classifier
+    classifier = NaiveBayesClassifier.train(features_train)
+    print ("\nAccuracy of the classifier:", nltk.classify.util.accuracy(classifier, features_test))
+            </code></pre>
+            <p>We have now created a Naive Bayes classifer, and trained it using the movie reviews we gathered and processed earlier! This is the model we will use to determine the sentiment of the text input.</p>
+            <p>Finally we can use this model to classify reviews! Enter some movie reviews and see the results after running the script.</p>
+            <p>Paste the below code at the bottom of your Python file</p>
+            <pre><code class="language-python">
+# Sample input reviews
+    input_reviews = [
+        "input1", 
+        "input2",
+        "add more reviews by adding to this list", 
+    ]
+    
+    print ("\nPredictions:")
+    for review in input_reviews:
+        print ("\nReview:", review)
+        probdist = classifier.prob_classify(extract_features(review.split()))
+        pred_sentiment = probdist.max()
+        
+        print ("Predicted sentiment:", pred_sentiment)
+        print ("Probability:", round(probdist.prob(pred_sentiment), 2))
+            </code></pre>
+            <h2>Going Further</h2>
+            <p>So, what are the next steps?</p>
+            <p>Text Sentiment Analysis is used in many different scenarios, in many industries.</p>
+            <p>Research some of these different use cases and try to modify the code we wrote today, use a different data set, or output different results such as the most important key words. </p>
+        </article>
+    </main>
+
+    <footer>
+        <a href="https://www.facebook.com/PortAISociety/" target="_blank"><img class="social" src="../../../img/fb-icon.png" alt="Facebook Link"/></a>
+        <a href="https://www.twitter.com/PortAISociety/" target="_blank"><img class="social" src="../../../img/tw-icon.png" alt="Twitter Link"/></a>
+        <a href="https://instagram.com/PortAISoc/" target="_blank"><img class="social" src="../../../img/ig-icon.png" alt="Instagram Link"></a>
+        <a href="https://www.github.com/PortAISociety/" target="_blank"><img class="social" src="../../../img/gh-icon.png" alt="GitHub Link"/></a>
+        <a href="https://discord.gg/xbW7n8f" target="_blank"><img class="social" src="../../../img/ds.png" alt="Discord Link"/></a>
+        <a href="https://www.linkedin.com/company/portaisociety/about/" target="_blank"><img class="social" src="../../../img/li-icon.png" alt="LinkedIn Link"/></a>
+    </footer>
+</div>
+</html>
