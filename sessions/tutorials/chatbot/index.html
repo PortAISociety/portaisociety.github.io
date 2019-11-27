@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Artificial Intelligence & Robotics Society, University of Portsmouth</title>
+    <meta name="description" content="PortAISociety website.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../../img/favicon.png">
+    <link rel="stylesheet" href="../../../css/prism.css">
+    <link rel="stylesheet" href="../../../css/altmain.css">
+</head>
+<div id="particles">
+    <script src="../../../js/prism.js"></script>
+    <script src="../../../js/particles.js"></script>
+    <script src="../../../js/app.js"></script>
+
+    <nav>
+        <a href="../../../">Home</a>
+        <a href="../../../members">Committee Team</a>
+        <b><a href="../../">Sessions</a></b>
+        <a href="../../../researchseminars">Research Seminars</a>
+        <a href="../../../aboutus">About us</a>
+        <a href="https://membership.upsu.net/group/artificial-intelligence-robotics" target="_blank">Join us!</a>
+    </nav>
+
+    <header id="home">
+        <h1>Making a Chatbot</h1>
+    </header>
+
+    <main>
+        <article class="margin-end">
+            <div class="session-information-green">
+                <p>You <b>will need</b> the following txt file for this tutorial. Please download it now by <a href="https://drive.google.com/file/d/1dibAZy4-oXm3ujtjB8q5LMi5wKR3Q10W/view?usp=sharing">clicking here</a>.</p>
+            </div>
+            <h2>Objective</h2>
+            <p>The goal of this session is to build a chatbot, we will be taking an input and then having the bot return relevant information when given a cue.</p>
+            <h2>Installation & Setup</h2>
+            <p>As always, we're using <a href="https://www.python.org/downloads/">Python3</a>. If you have not already downloaded and installed Python 3, please let one of the committee know - you will need it for future sessions to it's best we sort out any installation problems now.</p>
+            <p>For this session, we will also need to grab a few libraries. For this, we are going to need to open a Command Prompt or Terminal (depending on your Operating System) and run the following commands individually:</p>
+            <pre><code class="language-">pip install nltk</code></pre>
+            <pre><code class="language-">pip install numpy</code></pre>
+            <pre><code class="language-">pip install scikit-learn</code></pre>
+            <p>Again, if any of these commands do not work please let the committee know now so that we can resolve these issues. We're going to be using pip installs in the majority of sessions as it is an incredibly simple and useful tool so we need to ensure everyone has it up and working.</p>
+            <h2>Guide to Making Chatbot</h2>
+            <h3>Importing libraries</h3>
+            <p>Once you've installed the necessary libraries (see the Installation & Setup section), it's time to start programming. First, open up a Python IDE of your choice and create a new Python file.</p>
+            <p>At the top of the page, we need to import all of the libraries that we just installed into our file so that we can use them later on. Go ahead and copy the following at the top of the file:</p>
+            <pre><code class="language-python">
+import io # to read / write to file system
+import random
+import string # to process standard python strings
+import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+import warnings
+warnings.filterwarnings('ignore') # Ignoring unnecesary warnings
+import nltk
+from nltk.stem import WordNetLemmatizer
+            </code></pre>
+            <h3>Natural Language Toolkit Setup</h3>
+            <p>Now that we have imported the required libraries, we need to use nltk to download some datasets that we will be using later.</p>
+            <p>Copy and paste the following code into your program underneath the import statements.</p>
+            <pre><code class="language-python">
+nltk.download('popular', quiet=True) # for downloading packages
+
+# the 2 lines below only need to be run once, comment them out after this
+nltk.download('punkt')
+nltk.download('wordnet')
+            </code></pre>
+            <h3>Reading in the Data</h3>
+            <p>Now that we have imported everything we need, it's time to start creating our chatbot!</p>
+            <p>The first thing we need to do is to input our data, for this I will be using a plain text version of the Tesla Wikipedia page. This can be downloaded from the link at the top of the page.</p>
+            <p>Next, copy and paste the following code into your program underneath the code from before. Make sure to leave a couple lines between your old code and this new code.</p>
+            <pre><code class="language-python">
+#Reading in the text
+with open('chatbot.txt','r', encoding='utf8', errors ='ignore') as fin:
+    raw = fin.read().lower()
+
+            </code></pre>
+            <p>We now have a variable, <code class="language-">raw</code> which contains the txt file, chatbot.txt. So what can we do with it now?</p>
+            <p>Well first we need to tokenize, or split up, the file into sentences and words. This is going to be used later when we build our model.</p>
+            <p>Next, copy and paste the following code into your program underneath the code from before. Make sure to leave a couple lines between your old code and this new code.</p>
+            <pre><code class="language-python">
+#Tokenisation
+sent_tokens = nltk.sent_tokenize(raw)# converts to list of sentences 
+word_tokens = nltk.word_tokenize(raw)# converts to list of words
+            </code></pre>
+            <h2>Pre-processing the data</h2>
+            <p>If you recall from last week, we covered a lot of concepts used within NLP, One of those was Lemmatization. We will be using Lemmatization to give context to our input data.</p>
+            <p>For example, let's say we have the following words, Lemmatization can be used to infer that:</p>
+            <ul>
+                <li>Rocks is very similar to rock</li>
+                <li>Corpora is very similar to corpus</li>
+                <li>Better is very similar to good</li>
+            </ul>
+            <p>Copy and paste the following code into your program underneath the code from before. Make sure to leave a couple lines between your old code and this new code.</p>
+            <pre><code class="language-python">
+# Preprocessing
+lemmer = WordNetLemmatizer()
+def LemTokens(tokens):
+    return [lemmer.lemmatize(token) for token in tokens]
+remove_punct_dict = dict((ord(punct), None) for punct in string.punctuation)
+
+def LemNormalize(text):
+    return LemTokens(nltk.word_tokenize(text.lower().translate(remove_punct_dict)))
+            </code></pre>
+            <h2>Generating a response</h2>
+            <p>Okay, now that we have written all the preprocessing code we can begin to formulate the responses of our chatbot. For this we will be using the <code class="language-">TfidfVectorizer</code> from sklearn.</p>
+            <p>The TfidfVectorizer transforms text into feature vectors that we can then used as an input when estimating the best response. We are also taking out any stop-words, such as "and", "the" etc here.</p>
+            <p>This feature vector will then be used in an algorithm called a <b>Cosine Similarity</b>, don't worry you don't need to know what it is, but you can find out more <a href="https://en.wikipedia.org/wiki/Cosine_similarity">here</a>.</p>
+            <p>All we need to know is we are using it to generate our responses.</p>
+            <p>Copy and paste the following code into your program underneath the code from before. Make sure to leave a couple lines between your old code and this new code.</p>
+            <pre><code class="language-python">
+# Generating response
+def response(user_response):
+    robot_response=''
+    sent_tokens.append(user_response)
+    TfidfVec = TfidfVectorizer(tokenizer=LemNormalize, stop_words='english')
+    tfidf = TfidfVec.fit_transform(sent_tokens)
+    vals = cosine_similarity(tfidf[-1], tfidf)
+    idx=vals.argsort()[0][-2]
+    flat = vals.flatten()
+    flat.sort()
+    req_tfidf = flat[-2]
+    if(req_tfidf==0):
+        robot_response=robot_response+"I am sorry! I don't understand you"
+        return robot_response
+    else:
+        robot_response = robot_response+sent_tokens[idx]
+        return robot_response
+
+            </code></pre>
+            <h2>Pulling it all together</h2>
+            <p>Great, we are nearly finished, we just need to get the Chatbot to actually print these responses.</p>
+            <p>This is accomplished using a while loop, which just waits for an input and then returns a response from our previous function</p>
+            <p>Copy and paste the following code into your program underneath the code from before. Make sure to leave a couple lines between your old code and this new code.</p>
+            <pre><code class="language-python">
+flag=True
+print("TeslaBot: Hello! I am a Chatbot which will try to tell you stuff about Tesla!  If you want to quit, type 'bye' \n")
+while(flag==True):
+    user_response = input()
+    user_response=user_response.lower()
+    if(user_response!='bye'):
+       print("\nTeslaBot: ",end="")                   
+       print(response(user_response))
+       sent_tokens.remove(user_response)
+       print("\n")
+    else:
+        flag=False
+        print("\nTeslaBot: Bye! take care..")    
+            </code></pre>
+            <p>Now that we have a chatbot, run the code, when prompted enter some cues, such as "elon musk" or "roadster", the bot should return information pertaining to those topics!</p>
+            <h2>Further adaptation</h2>
+            <p>Okay great, we have written a very simple chatbot, that while working is not the most accurate. Why not try making it more accurate?</p>
+            <ul>
+                <li>The dataset we have provided is quite limited, try to include more Tesla related content, see if this improves the model?</li>
+                <li>As of now you need to create a txt file for this. Why not try and incorporate web scraping and then pull directly from Wikipedia.</li>
+                <li>Take this code, and build a web application that looks and feels more like an actual chatbot! (hint: use a flask web server and http requests to pass the data)</li>
+            </ul>
+            <p>If you do any of the above challenges let us know. We want to see them done!</p>
+        </article>
+    </main>
+
+    <footer>
+        <a href="https://www.facebook.com/PortAISociety/" target="_blank"><img class="social" src="../../../img/fb-icon.png" alt="Facebook Link"/></a>
+        <a href="https://www.twitter.com/PortAISociety/" target="_blank"><img class="social" src="../../../img/tw-icon.png" alt="Twitter Link"/></a>
+        <a href="https://instagram.com/PortAISoc/" target="_blank"><img class="social" src="../../../img/ig-icon.png" alt="Instagram Link"></a>
+        <a href="https://www.github.com/PortAISociety/" target="_blank"><img class="social" src="../../../img/gh-icon.png" alt="GitHub Link"/></a>
+        <a href="https://discord.gg/xbW7n8f" target="_blank"><img class="social" src="../../../img/ds.png" alt="Discord Link"/></a>
+        <a href="https://www.linkedin.com/company/portaisociety/about/" target="_blank"><img class="social" src="../../../img/li-icon.png" alt="LinkedIn Link"/></a>
+    </footer>
+</div>
+</html>
