@@ -135,6 +135,7 @@ main {
     padding-top: 2%;
     position: absolute;
     color: black;
+    top: 50vh;
 }
 
 article {
