@@ -192,7 +192,7 @@ header footer
 ---- */
 
 footer {
-  position: absolute;
+  position: sticky;
   width: 100%;
   bottom: 0;
   background-color: rgba(45, 132, 150, 0.452);
