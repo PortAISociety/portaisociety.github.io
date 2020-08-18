@@ -1,0 +1,17 @@
+---
+session: Session 4
+block: 2018-2019
+title: Neural Networks
+speakers: Thomas Apter
+session_date: 16/10/2019
+session_time: 16:00-17:00
+session_location: Richmond Building - LT3
+links:
+- type: Presentation slides
+  text: Session 4
+  url: https://docs.google.com/presentation/d/1MBZ0V0NBOKVCf3SinhAkPTzxUHpgTZOoGuPmB5O0ygA/edit?usp=sharing
+- type: Resources
+  text: Neural Networks tutorial
+  url: tutorials/neuralnets
+---
+Neural Networks are a core part of Artificial Intelligence. Today, we're going to look into how we can implement them ourselves without getting bogged down in the mathematics behind it.

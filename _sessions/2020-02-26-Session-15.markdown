@@ -1,0 +1,12 @@
+---
+session: Session 15
+block: 2018-2019
+title: Robotic Projects IV + AGM Results
+speakers: Mikael Rozee
+session_date: 19/02/2020
+session_time: 16:00-17:00
+session_location: Richmond Building - LT3
+---
+Over the last week, people have been voting for who should represent the society as the committee for 2020/21. In this session, we will be announcing the results of that election.
+
+After the election fun is over, we will be continuing with robotics projects from previous weeks.

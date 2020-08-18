@@ -1,0 +1,22 @@
+---
+session: Taster Session 1
+block: 2018-2019
+title: Genetic Programming
+speakers: Mikael Rozee
+session_date: 25/09/2019
+session_time: 16:00-17:00
+session_location: Richmond Building - LT3
+links:
+- type: Presentation slides
+  text: Session 1
+  url: https://docs.google.com/presentation/d/1jRbVasmHEZ9oTdKkzBAwFL0WXl2fn9iUW1S4IsRHRBE/edit?usp=sharing
+- type: Resources
+  text: Genetic Racing tutorial
+  url: tutorials/geneticracing
+- type: GitHub
+  text: mikaelsrozee/robocars
+  url: https://github.com/mikaelsrozee/robocars
+---
+Come to our first taster session of 2019 to find out what we're up and how the society will be structured in this academic year.
+
+We're going to be teaching you about the history of and theory behind Genetic Programming and then putting it into practice to "breed" cars that are able to navigate a race track.

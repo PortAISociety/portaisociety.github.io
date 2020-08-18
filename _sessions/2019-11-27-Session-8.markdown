@@ -1,0 +1,18 @@
+---
+session: Session 8
+block: 2018-2019
+title: Chatbots
+speakers: Thomas Apter
+session_date: 27/11/2019
+session_time: 16:00-17:00
+session_location: Richmond Building - LT3
+links:
+- type: Presentation slides
+  text: Session 8
+  url: https://docs.google.com/presentation/d/1mucxciVegsFktkYvZnrq8ySTGqGgq0TX3ET_JW_NQzY/edit?usp=sharing
+- type: Resources
+  text: Making a Chatbot
+  url: tutorials/chatbot/
+
+---
+This week's session we will be using the Natural Language Processing techniques we used previously, and embedding them in a chatbot!

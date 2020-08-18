@@ -1,0 +1,19 @@
+---
+session: Taster Session 2
+block: 2018-2019
+title: Robotic Process Automation
+speakers: Thomas Apter
+session_date: 02/10/2019
+session_time: 16:00-17:00
+session_location: Richmond Building - LT3
+links:
+- type: Presentation slides
+  text: Session 2
+  url: https://docs.google.com/presentation/d/1rR5iSlsADkPKrWq1UAZbwoAOkuVno0edIFXbh0GTW90/edit?usp=sharing
+- type: Resources
+  text: Web Automation tutorial
+  url: tutorials/rpa
+---
+Come to our second taster session of 2019 to find out what we're up and how the society will be structured in this academic year.
+
+We're going to be teaching you about Robotic Process automation, its many uses across industry, and then using this knowledge to create a tool to automate filling in web forms.

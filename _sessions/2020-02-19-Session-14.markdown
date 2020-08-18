@@ -1,0 +1,10 @@
+---
+session: Session 14
+block: 2018-2019
+title: Robotic Projects III
+speakers: Samuel Drage
+session_date: 19/02/2020
+session_time: 16:00-17:00
+session_location: Richmond Building - LT3
+---
+Scaredybot and friends could do with some further work - let's see what we can do.

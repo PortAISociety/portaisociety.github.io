@@ -1,0 +1,10 @@
+---
+session: Session 12
+block: 2018-2019
+title: Robotic Projects
+speakers: Emily Maryon & Samuel Drage
+session_date: 05/02/2020
+session_time: 16:00-17:00
+session_location: Richmond Building - LT3
+---
+With the basics covered, it's time to start compiling your knowledge to create robots of your own.

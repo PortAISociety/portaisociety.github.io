@@ -1,0 +1,17 @@
+---
+session: Session 3
+block: 2018-2019
+title: Intro to the Society + Decision Trees
+speakers: Mikael Rozee
+session_date: 09/10/2019
+session_time: 16:00-17:00
+session_location: Richmond Building - LT3
+links:
+- type: Presentation slides
+  text: Session 3
+  url: https://docs.google.com/presentation/d/1Ik98I08xUIFsdN_S_GsOXOeC5mpzQK9Apr01vnuhsBI/edit?usp=sharing
+- type: Resources
+  text: Decision Trees tutorial
+  url: tutorials/dtrees
+---
+Welcome to our first session of the year! We're going to be going through information about how you can get involved in the society throughout the rest of the year and then move on to create our very own Decision Trees in multiple different methods.

@@ -1,0 +1,10 @@
+---
+session: Session 11
+block: 2018-2019
+title: Introduction to Robotics II
+speakers: Emily Maryon
+session_date: 29/01/2020
+session_time: 16:00-17:00
+session_location: Richmond Building - LT3
+---
+In this session, we're expanding on our brand new Arduino Nano robotics kits. We're going to be covering more of the basics so that we can start building bigger, smarter and more innovative robots.

@@ -1,0 +1,18 @@
+---
+session: Session 6
+block: 2018-2019
+title: Sentiment Analysis
+speakers: Mikael Rozee
+session_date: 13/11/2019
+session_time: 16:00-17:00
+session_location: Richmond Building - LT3
+links:
+- type: Presentation slides
+  text: Session 6
+  url: https://docs.google.com/presentation/d/15zdkHCQMioFoz5d1Xy4UBtdHsIumk6M_bIG-t76i3Tc/edit?usp=sharing
+- type: Resources
+  text: Text Sentiment Analysis
+  url: tutorials/textsentiment/
+
+---
+An introduction to Sentiment Analysis.

@@ -1,0 +1,10 @@
+---
+session: Session 10
+block: 2018-2019
+title: Introduction to Robotics
+speakers: Samuel Drage & Emily Maryon
+session_date: 22/01/2020
+session_time: 16:00-17:00
+session_location: Richmond Building - LT3
+---
+In this session, we're introducing our brand new Arduino Nano robotics kits. This is your first opportunity to get hands on with the kits and exploring what they can do.

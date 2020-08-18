@@ -1,0 +1,10 @@
+---
+session: Session 13
+block: 2018-2019
+title: Robotic Projects II
+speakers: Emily Maryon & Samuel Drage
+session_date: 12/02/2020
+session_time: 16:00-17:00
+session_location: Richmond Building - LT3
+---
+Scaredybot and friends could do with some further work - let's see what we can do.
