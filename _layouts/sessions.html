@@ -1,0 +1,41 @@
+---
+layout: default
+---
+{{ content }}
+<article>
+    <h1>Next session:</h1>
+</article>
+<div id="timeline">
+    {% assign sessions = site.sessions | where: "block", page.block %}
+    {% for session in sessions reversed %}
+    <article class="right">
+        <h2>{{ session.session }}</h2>
+        <section>
+            <b>{{ session.block }}: {{ session.session }}</b>
+            <h3>{{ session.session }}{% if session.title != session.session %}: {{ session.title }}{% endif %}</h3>
+            {{ session.content | markdownify }}
+            <div class="session-information-blue">
+                <p><b>Speakers: {{ session.speakers }}</b></p>
+                <p><b>Date: {{ session.session_date }}</b></p>
+                <p><b>Time: {{ session.session_time }}</b></p>
+                <p><b>Location: {{ session.session_location }}</b></p>
+            </div>
+            {% if session.links %}
+            <div class="session-information-green">
+                {% for link in session.links %}
+                <p><b>{{ link.type }}:</b> <a href="{{ link.url }}">{{ link.text }}</a></p>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </section>
+    </article>
+    {% endfor %}
+</div>
+{% if page.prev_block %}
+<article class="medium-space">
+    <div class="session-information-yellow medium-space">
+        <p><b>Looking for last year's sessions?</b></p>
+        <p>You can find {{ page.prev_block }}'s sessions by <a href="{{ page.prev_block_url }}">clicking here</a>.</p>
+    </div>
+</article>
+{% endif %}
