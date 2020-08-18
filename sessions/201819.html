@@ -1,25 +1,14 @@
+---
+permalink: /sessions/201819/
+---
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Artificial Intelligence & Robotics Society, University of Portsmouth</title>
-    <meta name="description" content="PortAISociety website.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../../img/favicon.png">
-    <link rel="stylesheet" href="../../css/altmain.css">
-</head>
+{% include head.html %}
 <div id="particles">
     <script src="../../js/particles.js"></script>
     <script src="../../js/app.js"></script>
 
-    <nav>
-        <a href="../../">Home</a>
-        <a href="../../members">Committee Team</a>
-        <b><a href="../">Sessions</a></b>
-        <a href="../../researchseminars">Research Seminars</a>
-        <a href="../../aboutus">About us</a>
-        <a href="https://membership.upsu.net/group/artificial-intelligence-robotics" target="_blank">Join us!</a>
-    </nav>
+    {% include navigation.html %}
 
     <header id="home">
         <h1>Archived Sessions</h1>
@@ -290,13 +279,6 @@
         </div>
     </main>
 
-    <footer>
-        <a href="https://www.facebook.com/PortAISociety/" target="_blank"><img class="social" src="../img/fb-icon.png" alt="Facebook Link"/></a>
-        <a href="https://www.twitter.com/PortAISociety/" target="_blank"><img class="social" src="../img/tw-icon.png" alt="Twitter Link"/></a>
-        <a href="https://instagram.com/PortAISoc/" target="_blank"><img class="social" src="../img/ig-icon.png" alt="Instagram Link"></a>
-        <a href="https://www.github.com/PortAISociety/" target="_blank"><img class="social" src="../img/gh-icon.png" alt="GitHub Link"/></a>
-        <a href="https://discord.gg/xbW7n8f" target="_blank"><img class="social" src="../img/ds.png" alt="Discord Link"/></a>
-        <a href="https://www.linkedin.com/company/portaisociety/about/" target="_blank"><img class="social" src="../img/li-icon.png" alt="LinkedIn Link"/></a>
-    </footer>
+    {% include footer.html %}
 </div>
 </html>
