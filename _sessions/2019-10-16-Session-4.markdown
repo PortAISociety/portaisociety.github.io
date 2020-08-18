@@ -1,6 +1,6 @@
 ---
 session: Session 4
-block: 2018-2019
+block: 2019-2020
 title: Neural Networks
 speakers: Thomas Apter
 session_date: 16/10/2019

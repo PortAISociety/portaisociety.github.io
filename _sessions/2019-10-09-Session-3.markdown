@@ -1,6 +1,6 @@
 ---
 session: Session 3
-block: 2018-2019
+block: 2019-2020
 title: Intro to the Society + Decision Trees
 speakers: Mikael Rozee
 session_date: 09/10/2019

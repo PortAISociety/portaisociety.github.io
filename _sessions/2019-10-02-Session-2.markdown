@@ -1,6 +1,6 @@
 ---
 session: Taster Session 2
-block: 2018-2019
+block: 2019-2020
 title: Robotic Process Automation
 speakers: Thomas Apter
 session_date: 02/10/2019

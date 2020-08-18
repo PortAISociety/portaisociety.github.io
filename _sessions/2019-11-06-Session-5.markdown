@@ -1,6 +1,6 @@
 ---
 session: Session 5
-block: 2018-2019
+block: 2019-2020
 title: AI and Ethics
 speakers: Emily Maryon
 session_date: 06/11/2019

@@ -1,6 +1,6 @@
 ---
 session: Python Crash Course
-block: 2018-2019
+block: 2019-2020
 title: Python Crash Course
 speakers: Samuel Drage
 session_date: 28/10/2019

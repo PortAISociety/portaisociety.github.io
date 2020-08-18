@@ -1,6 +1,6 @@
 ---
 session: Session 9
-block: 2018-2019
+block: 2019-2020
 title: How should Santa use Artificial Intelligence?
 speakers: Mikael Rozee
 session_date: 04/12/2019

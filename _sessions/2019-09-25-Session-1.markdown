@@ -1,6 +1,6 @@
 ---
 session: Taster Session 1
-block: 2018-2019
+block: 2019-2020
 title: Genetic Programming
 speakers: Mikael Rozee
 session_date: 25/09/2019

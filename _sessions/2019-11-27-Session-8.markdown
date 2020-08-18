@@ -1,6 +1,6 @@
 ---
 session: Session 8
-block: 2018-2019
+block: 2019-2020
 title: Chatbots
 speakers: Thomas Apter
 session_date: 27/11/2019

@@ -1,6 +1,6 @@
 ---
 session: Session 12
-block: 2018-2019
+block: 2019-2020
 title: Robotic Projects
 speakers: Emily Maryon & Samuel Drage
 session_date: 05/02/2020

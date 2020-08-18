@@ -1,6 +1,6 @@
 ---
 session: Session 6
-block: 2018-2019
+block: 2019-2020
 title: Sentiment Analysis
 speakers: Mikael Rozee
 session_date: 13/11/2019

@@ -1,6 +1,6 @@
 ---
 session: Session 7
-block: 2018-2019
+block: 2019-2020
 title: Natural Language Processing
 speakers: Mikael Rozee
 session_date: 20/11/2019

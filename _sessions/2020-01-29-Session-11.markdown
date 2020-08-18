@@ -1,6 +1,6 @@
 ---
 session: Session 11
-block: 2018-2019
+block: 2019-2020
 title: Introduction to Robotics II
 speakers: Emily Maryon
 session_date: 29/01/2020
