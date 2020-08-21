@@ -1,6 +1,6 @@
 [
     {"name": "Home", "link": "/"},
-    {"name": "Committe Team", "link": "/members/"},
+    {"name": "Committee Team", "link": "/members/"},
     {"name": "Sessions", "link": "/sessions/"},
     {"name": "Research Seminars", "link": "/researchseminars/"},
     {"name": "About us", "link": "/aboutus/"},
