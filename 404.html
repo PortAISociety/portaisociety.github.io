@@ -1,21 +1,20 @@
 ---
-stylesheet: ../css/main.css
+stylesheet: /css/main.css
 ---
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html %}
+<body class="full-flex">
 <div id="particles">
-  <script src="./js/particles.js"></script>
-  <script src="./js/app.js"></script>
-
+  <script src="/js/particles.js"></script>
+  <script src="/js/app.js"></script>
+</div>
   {% include navigation.html %}
-
   <header id="home">
-    <img src="img/logo-long.png" alt="Artificial Intelligence & Robotics Society Logo">
+    <img src="/img/logo-long.png" alt="Artificial Intelligence & Robotics Society Logo">
     <h1>404</h1>
     <h2>Page not found</h2>
   </header>
-
   {% include footer.html %}
-</div>
+</body>
 </html>
