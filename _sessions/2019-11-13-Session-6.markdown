@@ -12,7 +12,7 @@ links:
   url: https://docs.google.com/presentation/d/15zdkHCQMioFoz5d1Xy4UBtdHsIumk6M_bIG-t76i3Tc/edit?usp=sharing
 - type: Resources
   text: Text Sentiment Analysis
-  url: tutorials/textsentiment/
+  url: /sessions/tutorials/textsentiment/
 
 ---
 An introduction to Sentiment Analysis.

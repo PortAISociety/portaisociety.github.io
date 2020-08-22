@@ -12,7 +12,7 @@ links:
   url: https://docs.google.com/presentation/d/1ar5vMTCZuC8-pHp3lSbeoTtgqth_ijKG05PlCf5Qg5U/edit?usp=sharing
 - type: Resources
   text: Christmas Presentation
-  url: tutorials/nlp/
+  url: /sessions/tutorials/nlp/
 
 ---
 Santa Claus has a huge task of delivering presents to all the well behaved people around the world. As he and his employees have been doing this for many years, his systems for doing so have become outdated and are no longer modern or as optimal as they could be.

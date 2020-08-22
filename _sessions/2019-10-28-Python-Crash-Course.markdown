@@ -12,6 +12,6 @@ links:
   url: https://docs.google.com/presentation/d/1NL1TLHI2QIGs2TI7W3b67NkmjN8s2WpI1aE0gTcBZH0/edit?usp=sharing
 - type: Resources
   text: Crash Course materials
-  url: tutorials/crashpython/
+  url: /sessions/tutorials/crashpython/
 ---
 A quick introduction to the Python programming language.

@@ -12,6 +12,6 @@ links:
   url: https://docs.google.com/presentation/d/1MBZ0V0NBOKVCf3SinhAkPTzxUHpgTZOoGuPmB5O0ygA/edit?usp=sharing
 - type: Resources
   text: Neural Networks tutorial
-  url: tutorials/neuralnets
+  url: /sessions/tutorials/neuralnets
 ---
 Neural Networks are a core part of Artificial Intelligence. Today, we're going to look into how we can implement them ourselves without getting bogged down in the mathematics behind it.

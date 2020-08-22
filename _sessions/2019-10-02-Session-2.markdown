@@ -12,7 +12,7 @@ links:
   url: https://docs.google.com/presentation/d/1rR5iSlsADkPKrWq1UAZbwoAOkuVno0edIFXbh0GTW90/edit?usp=sharing
 - type: Resources
   text: Web Automation tutorial
-  url: tutorials/rpa
+  url: /sessions/tutorials/rpa
 ---
 Come to our second taster session of 2019 to find out what we're up and how the society will be structured in this academic year.
 

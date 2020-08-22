@@ -12,7 +12,7 @@ links:
   url: https://docs.google.com/presentation/d/1mucxciVegsFktkYvZnrq8ySTGqGgq0TX3ET_JW_NQzY/edit?usp=sharing
 - type: Resources
   text: Making a Chatbot
-  url: tutorials/chatbot/
+  url: /sessions/tutorials/chatbot/
 
 ---
 This week's session we will be using the Natural Language Processing techniques we used previously, and embedding them in a chatbot!

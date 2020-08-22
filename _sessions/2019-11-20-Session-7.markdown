@@ -12,7 +12,7 @@ links:
   url: https://docs.google.com/presentation/d/1F7D08DZphXvMbRWnJ5ag5Cg4Mi4B4L5Akh3QyIWfdPw/edit?usp=sharing
 - type: Resources
   text: Natural Language Processing tutorial
-  url: tutorials/nlp/
+  url: /sessions/tutorials/nlp/
 
 ---
 This session we’re going to look at Semantic Analysis - a way of interpreting the meaning or subject matter of a piece of text.

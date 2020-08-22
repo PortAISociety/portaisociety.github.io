@@ -12,7 +12,7 @@ links:
   url: https://docs.google.com/presentation/d/1jRbVasmHEZ9oTdKkzBAwFL0WXl2fn9iUW1S4IsRHRBE/edit?usp=sharing
 - type: Resources
   text: Genetic Racing tutorial
-  url: tutorials/geneticracing
+  url: /sessions/tutorials/geneticracing
 - type: GitHub
   text: mikaelsrozee/robocars
   url: https://github.com/mikaelsrozee/robocars
