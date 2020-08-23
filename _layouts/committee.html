@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<div class="top-flex">
+    <div id="particles">
+        <script src="/js/particles.js"></script>
+        <script src="/js/app.js"></script> 
+    </div>
+    {% include navigation.html %}
+    <header id="home">
+        <h1>{{ page.full_name }} - {{ page.position }}</h1>
+    </header>
+    {% include footer.html %}
+</div>
+<main>
+    {{ content }}
+</main>
+</html>

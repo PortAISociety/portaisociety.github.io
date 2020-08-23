@@ -7,8 +7,23 @@ title: Committee Team
   <h1>Committee Team</h1>
   <div class="flex-container medium-space">
     
+    {% for member in site.committee %}
+    <a href="{{ member.url }}">
+      <div class="card">
+        <h1>{{ member.full_name }}</h1>
+        <p class="title">{{ member.position }}</p>
+        <p>{{ member.course }}</p>
+        <p>{{ member.email }}</p>
+        <div class="profile-interest">
+          <p><b>Interests</b></p>
+          <p>{{ member.interests }}</p>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+
     <!--President Profile -->
-    <div class="card">
+    <!-- <div class="card">
       <h1>Zac Wilson</h1>
       <p class="title">President</p>
       <p>Student, Computer Science</p>
@@ -17,10 +32,10 @@ title: Committee Team
         <p><b>Interests</b></p>
         <p>Amateur Astronomy, Piano, Electronics</p>
       </div>
-    </div>
+    </div> -->
     
     <!-- Vice President Profile -->
-    <div class="card">
+    <!-- <div class="card">
       <h1>Aidan Church</h1>
       <p class="title">Vice President</p>
       <p>Student, Computer Science</p>
@@ -29,9 +44,9 @@ title: Committee Team
         <p><b>Interests</b></p>
         <p>Machine Learning, AI, Programming, Music, Badminton</p>
       </div>
-    </div>
+    </div> -->
     <!-- Tresurer Profile -->
-    <div class="card">
+    <!-- <div class="card">
       <h1>Karen Jury</h1>
       <p class="title">Treasurer</p>
       <p>Student, Mechanical Engineering</p>
@@ -40,10 +55,10 @@ title: Committee Team
         <p><b>Interests</b></p>
         <p>Reading, Maths, Suitable Engineering</p>
       </div>
-    </div>
+    </div> -->
     
     <!-- Secretary Profile -->
-    <div class="card">
+    <!-- <div class="card">
       <h1>Sagarikka Sivakumar</h1>
       <p class="title">Secretary</p>
       <p>Student, Data Science</p>
@@ -53,7 +68,7 @@ title: Committee Team
         <p>App Development, Drawing, Reading</p>
       </div>
     </div>
-  </div>
+  </div> -->
   
   
   <article class="medium-space">

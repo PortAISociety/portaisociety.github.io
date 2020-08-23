@@ -392,7 +392,7 @@ Profile card
   justify-content: center;
 }
 
-.flex-container > div {
+.flex-container > div, .flex-container > a > div {
   background-color: #ffffff;
 }
 
