@@ -1,86 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Artificial Intelligence & Robotics Society, University of Portsmouth</title>
-    <meta name="description" content="PortAISociety website.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../../../img/favicon.png">
-    <link rel="stylesheet" href="../../../css/prism.css">
-    <link rel="stylesheet" href="../../../css/altmain.css">
-</head>
-<div id="particles">
-    <script src="../../../js/prism.js"></script>
-    <script src="../../../js/particles.js"></script>
-    <script src="../../../js/app.js"></script>
-
-    <nav>
-        <a href="../../../">Home</a>
-        <a href="../../../members">Committee Team</a>
-        <b><a href="../../">Sessions</a></b>
-        <a href="../../../researchseminars">Research Seminars</a>
-        <a href="../../../aboutus">About us</a>
-		<a href="../../../projects">Projects</a>
-        <a href="https://membership.upsu.net/group/artificial-intelligence-robotics" target="_blank">Join us!</a>
-    </nav>
-
-    <header id="home">
-        <h1>Decision Trees</h1>
-    </header>
-
-    <main>
-        <article class="margin-end">
-            <h2>Objective</h2>
-            <p>The goal of this session is to create Decision Trees - a simple method of allowing a program to make it's own choices based off of the information that it receives.</p>
-            <h2>Installation & Setup</h2>
-            <p>As always, we're using <a href="https://www.python.org/downloads/">Python3</a>. If you have not already downloaded and installed Python 3, please let one of the committee know - you will need it for future sessions to it's best we sort out any installation problems now.</p>
-            <p>For this session, we will also need to grab a few libraries. For this, we are going to need to open a Command Prompt or Terminal (depending on your Operating System) and run the following commands individually:</p>
-            <pre><code class="language-">pip install scikit-learn</code></pre>
-            <pre><code class="language-">pip install matplotlib</code></pre>
-            <p>Again, if any of these commands do not work please let the committee know now so that we can resolve these issues. We're going to be using pip installs in the majority of sessions as it is an incredibly simple and useful tool so we need to ensure everyone has it up and working.</p>
-            <h2>Starting simple</h2>
-            <p>Let's double check we know what we're actually trying to make. A decision tree takes a set of input data, and then runs it through a set of "decisions" to reach an end result.</p>
-            <p>These decisions could be anything we want them to be: Is the price of the item > £4.20? Is the time of day earlier than 14:41? Is my name Barry Bee-Benson?</p>
-            <p>We can keep making decisions until we are as certain as we can be that we have an answer to output.</p>
-            <p>Let's model a very simple decision tree, using the one from this week's presentation:</p>
-            <img class="resize" src="../../../img/dtrees/simpletree.PNG" alt="Simple decision tree">
-            <p>As shown in the presentation, we can model this through a series of if statements:</p>
-            <pre><code class="language-python">def organise_life(work_to_do, weather, friends_are_busy):
-	if not work_to_do:
-		if weather == "rainy":
-			if friends_are_busy:
-				print("stay at home")
-			else:
-				print("SPOOOOOOOOONS")
-		else if weather == "sunny":
-			print("go to the beach")
+---
+title: Decision Trees
+layout: default
+stylesheet:
+- /css/altmain.css
+- /css/prism.css
+---
+<script src="/js/prism.js"></script>
+<article class="margin-end">
+    <h2>Objective</h2>
+    <p>The goal of this session is to create Decision Trees - a simple method of allowing a program to make it's own choices based off of the information that it receives.</p>
+    <h2>Installation & Setup</h2>
+    <p>As always, we're using <a href="https://www.python.org/downloads/">Python3</a>. If you have not already downloaded and installed Python 3, please let one of the committee know - you will need it for future sessions to it's best we sort out any installation problems now.</p>
+    <p>For this session, we will also need to grab a few libraries. For this, we are going to need to open a Command Prompt or Terminal (depending on your Operating System) and run the following commands individually:</p>
+    <pre><code class="language-">pip install scikit-learn</code></pre>
+    <pre><code class="language-">pip install matplotlib</code></pre>
+    <p>Again, if any of these commands do not work please let the committee know now so that we can resolve these issues. We're going to be using pip installs in the majority of sessions as it is an incredibly simple and useful tool so we need to ensure everyone has it up and working.</p>
+    <h2>Starting simple</h2>
+    <p>Let's double check we know what we're actually trying to make. A decision tree takes a set of input data, and then runs it through a set of "decisions" to reach an end result.</p>
+    <p>These decisions could be anything we want them to be: Is the price of the item > £4.20? Is the time of day earlier than 14:41? Is my name Barry Bee-Benson?</p>
+    <p>We can keep making decisions until we are as certain as we can be that we have an answer to output.</p>
+    <p>Let's model a very simple decision tree, using the one from this week's presentation:</p>
+    <img class="resize" src="../../../img/dtrees/simpletree.PNG" alt="Simple decision tree">
+    <p>As shown in the presentation, we can model this through a series of if statements:</p>
+    <pre><code class="language-python">def organise_life(work_to_do, weather, friends_are_busy):
+if not work_to_do:
+if weather == "rainy":
+    if friends_are_busy:
+        print("stay at home")
     else:
-		print("stay at home")</code></pre>
-            <p>Reading through the code, you can see that the function takes in three input parameters: <code class="language-python">work_to_do</code>, <code class="language-python">weather</code> and <code class="language-python">friends_are_busy</code>.</p>
-            <p>Then, the program first asks "Have you got any work to do?". If the answer to this question is <code class="language-python">False</code> (yes) then it moves on to the next question. If the answer to that question is <code class="language-python">True</code> (no) then the program will print "stay at home" and exit.</p>
-            <p>Then, the program asks "What is the current weather?". If the answer to this question is <code class="language-python">"rainy"</code> then it moves on to the next question. Else, if the answer to that question is <code class="language-python">"sunny"</code>, the program will print "go to the beach" and exit.</p>
-            <p>Finally, the program asks "Are your friends busy?". If the answer to this question is <code class="language-python">True</code>, the program prints "stay at home" and exits. Else, if the answer to that question is <code class="language-python">False</code>, the program prints "SPOOOOOOOOONS" and exits.</p>
-            <p>Why not try and run it yourself? Here are some parameters you should try:</p>
-            <pre><code class="language-python">organise_life(True, "rainy", False)</code></pre>
-            <pre><code class="language-python">organise_life(False, "rainy", False)</code></pre>
-            <pre><code class="language-python">organise_life(False, "rainy", True)</code></pre>
-            <pre><code class="language-python">organise_life(False, "snowy", True)</code></pre>
-            <p>What can we observe from the above? Discuss.</p>
-            <p>Naturally, this system is not without limitation. For big decision trees, we must think of an alternative solution.</p>
-            <h2>Using scikit-learn to generate Decision Trees</h2>
-            <p><a href="https://scikit-learn.org">Scikit-learn</a> is a library used for various applications in Artificial Intelligence. Today, we're going to use it to generate decision trees automatically given an input set of classifications.</p>
-            <p>Decision Trees learn from the data given to approximate the best possible set of decision rules.</p>
-            <p>First, let's use one of sklearn's built-in datasets.</p>
-            <p>In a new Python file, run the following code:</p>
-            <pre><code class="language-python">from sklearn.datasets import load_iris
+        print("SPOOOOOOOOONS")
+else if weather == "sunny":
+    print("go to the beach")
+else:
+print("stay at home")</code></pre>
+    <p>Reading through the code, you can see that the function takes in three input parameters: <code class="language-python">work_to_do</code>, <code class="language-python">weather</code> and <code class="language-python">friends_are_busy</code>.</p>
+    <p>Then, the program first asks "Have you got any work to do?". If the answer to this question is <code class="language-python">False</code> (yes) then it moves on to the next question. If the answer to that question is <code class="language-python">True</code> (no) then the program will print "stay at home" and exit.</p>
+    <p>Then, the program asks "What is the current weather?". If the answer to this question is <code class="language-python">"rainy"</code> then it moves on to the next question. Else, if the answer to that question is <code class="language-python">"sunny"</code>, the program will print "go to the beach" and exit.</p>
+    <p>Finally, the program asks "Are your friends busy?". If the answer to this question is <code class="language-python">True</code>, the program prints "stay at home" and exits. Else, if the answer to that question is <code class="language-python">False</code>, the program prints "SPOOOOOOOOONS" and exits.</p>
+    <p>Why not try and run it yourself? Here are some parameters you should try:</p>
+    <pre><code class="language-python">organise_life(True, "rainy", False)</code></pre>
+    <pre><code class="language-python">organise_life(False, "rainy", False)</code></pre>
+    <pre><code class="language-python">organise_life(False, "rainy", True)</code></pre>
+    <pre><code class="language-python">organise_life(False, "snowy", True)</code></pre>
+    <p>What can we observe from the above? Discuss.</p>
+    <p>Naturally, this system is not without limitation. For big decision trees, we must think of an alternative solution.</p>
+    <h2>Using scikit-learn to generate Decision Trees</h2>
+    <p><a href="https://scikit-learn.org">Scikit-learn</a> is a library used for various applications in Artificial Intelligence. Today, we're going to use it to generate decision trees automatically given an input set of classifications.</p>
+    <p>Decision Trees learn from the data given to approximate the best possible set of decision rules.</p>
+    <p>First, let's use one of sklearn's built-in datasets.</p>
+    <p>In a new Python file, run the following code:</p>
+    <pre><code class="language-python">from sklearn.datasets import load_iris
 
 iris = load_iris()
 print(iris.DESCR)</code></pre>
-            <p>Breaking the code down line by line, the first line imports the dataset to our program so that we can use it in the first place. The second line tells the program to load the dataset and store it to a variable, <code class="language-">iris</code>. The third line then tells the program to print out a description about the dataset.</p>
-            <p>The TL;DR of the dataset is that it contains 3 classes of 50 instances each, where each class refers to a specific type of iris plant. This dataset is ideal for testing code with the goal of classification, like ours.</p>
-            <p>In this example, we're going to build a decision tree that can, given input data, predict which classification of iris plant the input data relates to.</p>
-            <p>Let's alter our code to begin.</p>
-            <pre><code class="language-python"># Import necessary libraries
+    <p>Breaking the code down line by line, the first line imports the dataset to our program so that we can use it in the first place. The second line tells the program to load the dataset and store it to a variable, <code class="language-">iris</code>. The third line then tells the program to print out a description about the dataset.</p>
+    <p>The TL;DR of the dataset is that it contains 3 classes of 50 instances each, where each class refers to a specific type of iris plant. This dataset is ideal for testing code with the goal of classification, like ours.</p>
+    <p>In this example, we're going to build a decision tree that can, given input data, predict which classification of iris plant the input data relates to.</p>
+    <p>Let's alter our code to begin.</p>
+    <pre><code class="language-python"># Import necessary libraries
 from sklearn.datasets import load_iris
 from sklearn import tree
 
@@ -89,16 +66,16 @@ classifier = tree.DecisionTreeClassifier()  # Create a "Classifier" variable, us
 classifier = classifier.fit(iris.data, iris.target) # Tell the classifier to "fit" the data - creating the internal decision tree
 
 print(tree.plot_tree(classifier.fit(iris.data, iris.target)))  # Print the tree to console</code></pre>
-            <p>Again, let's break the code down line by line:</p>
-            <p>The first two lines import the necessary libraries.</p>
-            <p>As before, we then store the dataset to a variable, <code class="language-">iris</code>.</p>
-            <p>This time, we then create a <code class="language-">classifier</code> variable. This variable uses the sklearn library and stores all the necessary functions to create a decision tree to that variable. As mentioned before, it takes two parameters - <code class="language-">iris.data</code> is the data we wish to input and <code class="language-">iris.target</code> is a list of all possible classifications of iris flower (one of which we want outputted per inputted data).</p>
-            <p>Finally, we tell the program to plot the tree to the console.</p>
-            <p>Run it... what happens?</p>
-            <h2>Making it usable</h2>
-            <p>As you may have noticed in the previous section, it prints out the data in a format that's not entirely readable by us.</p>
-            <p>Let's adapt our program to deal with that.</p>
-            <pre><code class="language-python"># Import necessary libraries
+    <p>Again, let's break the code down line by line:</p>
+    <p>The first two lines import the necessary libraries.</p>
+    <p>As before, we then store the dataset to a variable, <code class="language-">iris</code>.</p>
+    <p>This time, we then create a <code class="language-">classifier</code> variable. This variable uses the sklearn library and stores all the necessary functions to create a decision tree to that variable. As mentioned before, it takes two parameters - <code class="language-">iris.data</code> is the data we wish to input and <code class="language-">iris.target</code> is a list of all possible classifications of iris flower (one of which we want outputted per inputted data).</p>
+    <p>Finally, we tell the program to plot the tree to the console.</p>
+    <p>Run it... what happens?</p>
+    <h2>Making it usable</h2>
+    <p>As you may have noticed in the previous section, it prints out the data in a format that's not entirely readable by us.</p>
+    <p>Let's adapt our program to deal with that.</p>
+    <pre><code class="language-python"># Import necessary libraries
 from sklearn.datasets import load_iris
 from sklearn import tree
 from sklearn.tree.export import export_text
@@ -110,26 +87,14 @@ classifier = classifier.fit(iris.data, iris.target) # Tell the classifier to "fi
 tree.plot_tree(classifier.fit(iris.data, iris.target))  # Plot the tree internally
 result = export_text(classifier, feature_names=iris['feature_names'])   # Export it in a human-readable format
 print(result) # Print the tree in the human readable format</code></pre>
-            <p>This time, we've imported one additional library at the top, and changed our export code at the bottom.</p>
-            <p>These changes are mostly self explanatory but I will note the <code class="language-">export_text</code> function. This function takes two parameters: the classifier variable and the "feature names" of the tree. "Feature names" are stored in the iris dataset and are used to label the tree, without them it still wouldn't be readable by us (try it).</p>
-            <h2>Further adaptation</h2>
-            <p>Feeling confident? Feel free to tweak this code or try it on a different dataset (sklearn has many) to see what results you can create! Here are some resources to get you started:</p>
-            <ul>
-                <li><a href="https://scikit-learn.org/stable/modules/tree.html">Tutorial on scikit decision trees (from Scikit)</a></li>
-                <li><a href="https://www.hackerearth.com/practice/machine-learning/machine-learning-algorithms/ml-decision-tree/tutorial/">Tutorial on scikit decision trees (from hacker earth)</a></li>
-                <li><a href="https://scikit-learn.org/stable/datasets/index.html">Alternative scikit datasets</a></li>
-                <li><a href="https://www.youtube.com/watch?v=qDcl-FRnwSU">YouTube tutorial on Decision Trees</a></li>
-            </ul>
-        </article>
-    </main>
-
-    <footer>
-        <a href="https://www.facebook.com/PortAISociety/" target="_blank"><img class="social" src="../../../img/fb-icon.png" alt="Facebook Link"/></a>
-        <a href="https://www.twitter.com/PortAISociety/" target="_blank"><img class="social" src="../../../img/tw-icon.png" alt="Twitter Link"/></a>
-        <a href="https://instagram.com/PortAISoc/" target="_blank"><img class="social" src="../../../img/ig-icon.png" alt="Instagram Link"></a>
-        <a href="https://www.github.com/PortAISociety/" target="_blank"><img class="social" src="../../../img/gh-icon.png" alt="GitHub Link"/></a>
-        <a href="https://discord.gg/xbW7n8f" target="_blank"><img class="social" src="../../../img/ds.png" alt="Discord Link"/></a>
-        <a href="https://www.linkedin.com/company/portaisociety/about/" target="_blank"><img class="social" src="../../../img/li-icon.png" alt="LinkedIn Link"/></a>
-    </footer>
-</div>
-</html>
+    <p>This time, we've imported one additional library at the top, and changed our export code at the bottom.</p>
+    <p>These changes are mostly self explanatory but I will note the <code class="language-">export_text</code> function. This function takes two parameters: the classifier variable and the "feature names" of the tree. "Feature names" are stored in the iris dataset and are used to label the tree, without them it still wouldn't be readable by us (try it).</p>
+    <h2>Further adaptation</h2>
+    <p>Feeling confident? Feel free to tweak this code or try it on a different dataset (sklearn has many) to see what results you can create! Here are some resources to get you started:</p>
+    <ul>
+        <li><a href="https://scikit-learn.org/stable/modules/tree.html">Tutorial on scikit decision trees (from Scikit)</a></li>
+        <li><a href="https://www.hackerearth.com/practice/machine-learning/machine-learning-algorithms/ml-decision-tree/tutorial/">Tutorial on scikit decision trees (from hacker earth)</a></li>
+        <li><a href="https://scikit-learn.org/stable/datasets/index.html">Alternative scikit datasets</a></li>
+        <li><a href="https://www.youtube.com/watch?v=qDcl-FRnwSU">YouTube tutorial on Decision Trees</a></li>
+    </ul>
+</article>

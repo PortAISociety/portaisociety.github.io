@@ -1,59 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Artificial Intelligence & Robotics Society, University of Portsmouth</title>
-    <meta name="description" content="PortAISociety website.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../../../../img/favicon.png">
-    <link rel="stylesheet" href="../../../../css/prism.css">
-    <link rel="stylesheet" href="../../../../css/altmain.css">
-</head>
-<div id="particles">
-    <script src="../../../../js/prism.js"></script>
-    <script src="../../../../js/particles.js"></script>
-    <script src="../../../../js/app.js"></script>
+---
+title: 'Part 4: Iteration'
+layout: default
+stylesheet:
+- /css/altmain.css
+- /css/prism.css
+---
+<script src="/js/prism.js"></script>
+<article class="margin-end">
 
-    <nav>
-        <a href="../../../../">Home</a>
-        <a href="../../../../members">Committee Team</a>
-        <b><a href="../../../">Sessions</a></b>
-        <a href="../../../../researchseminars">Research Seminars</a>
-        <a href="../../../../aboutus">About us</a>
-        <a href="https://membership.upsu.net/group/artificial-intelligence-robotics" target="_blank">Join us!</a>
-    </nav>
+    <a href="../../crashpython">Back to course contents</a>
 
-    <header id="home">
-        <h1>Part 4: Iteration</h1>
-    </header>
+    <h2>Video</h2>
+    <iframe src="https://drive.google.com/file/d/1IG_HmG3zR5DY4cLGGWNYazpYHvoMC5k0/preview" width="640" height="480"></iframe>
 
-    <main>
-        <article class="margin-end">
+    <h2>Summary</h2>
+    <p>A list is an ordered set of data, all of the same type. You create a list by defining a variable as being equal to a set of open and closed brackets. To access the data inside a list, you reference the index of the data you want. The append and remove functions are used to add and remove values from a list respectively.</p>
+    <p>A for loop is used to iterate over a data set a finite number of times to perform actions on the data within the data set.</p>
 
-            <a href="../../crashpython">Back to course contents</a>
-
-            <h2>Video</h2>
-            <iframe src="https://drive.google.com/file/d/1IG_HmG3zR5DY4cLGGWNYazpYHvoMC5k0/preview" width="640" height="480"></iframe>
-
-            <h2>Summary</h2>
-            <p>A list is an ordered set of data, all of the same type. You create a list by defining a variable as being equal to a set of open and closed brackets. To access the data inside a list, you reference the index of the data you want. The append and remove functions are used to add and remove values from a list respectively.</p>
-            <p>A for loop is used to iterate over a data set a finite number of times to perform actions on the data within the data set.</p>
-
-            <h2>Examples</h2>
-            <pre><code class="language-python">
+    <h2>Examples</h2>
+    <pre><code class="language-python">
 # Declaration examples
 hopes_and_dreams = []
 
 shopping = ["apples", "bleach", "cable ties"]
 
 important_numbers = [42, 69, 420, 34]
-            </code></pre>
-            <pre><code class="language-python">
+    </code></pre>
+    <pre><code class="language-python">
 # Referencing examples
 print(important_numbers[0])
 print(important_numbers[2])
-            </code></pre>
-            <pre><code class="language-python">
+    </code></pre>
+    <pre><code class="language-python">
 # Appending example
 hopes_and_dreams.append("to be happy")
 
@@ -62,50 +40,38 @@ shopping.remove("apples")
 
 # Value alteration example
 shopping[0] = "oranges"
-            </code></pre>
-            <pre><code class="language-python">
+    </code></pre>
+    <pre><code class="language-python">
 # Checking for value
 if "bleach" in shopping:
-    print("That's a lot of bleach you've got there...")
+print("That's a lot of bleach you've got there...")
 
 if "apples" not in shopping:
-    print("You really need to eat more healthily")
-            </code></pre>
-            <pre><code class="language-python">
+print("You really need to eat more healthily")
+    </code></pre>
+    <pre><code class="language-python">
 # Iteration example
 for item in shopping:
-    print(item)
-            </code></pre>
-            <pre><code class="language-python">
+print(item)
+    </code></pre>
+    <pre><code class="language-python">
 # Complex iteration example
 for x in range(0, len(shopping)):
-    print(x, shopping[x])
-            </code></pre>
+print(x, shopping[x])
+    </code></pre>
 
-            <h2>Exercises</h2>
-            <ol>
-                <li>
-                    <p>A burglar is robbing a house. He already has a few things in his sack: diamonds, a candlestick, and a wallet. Create a list to represent his sack.</p>
-                </li>
-                <li>
-                    <p>The burglar continues to search the house. He decides the candlestick is worthless and replaces it with a 42-inch plasma TV. Using append and remove, update your virtual sack.</p>
-                </li>
-                <li>
-                    <p>The burglar’s sack rips! Write a program that outputs all the items that fall on the floor with the word “smash!” next to each one.</p>
-                </li>
-            </ol>
+    <h2>Exercises</h2>
+    <ol>
+        <li>
+            <p>A burglar is robbing a house. He already has a few things in his sack: diamonds, a candlestick, and a wallet. Create a list to represent his sack.</p>
+        </li>
+        <li>
+            <p>The burglar continues to search the house. He decides the candlestick is worthless and replaces it with a 42-inch plasma TV. Using append and remove, update your virtual sack.</p>
+        </li>
+        <li>
+            <p>The burglar’s sack rips! Write a program that outputs all the items that fall on the floor with the word “smash!” next to each one.</p>
+        </li>
+    </ol>
 
-            
-        </article>
-    </main>
-
-    <footer>
-            <a href="https://www.facebook.com/PortAISociety/" target="_blank"><img class="social" src="../../../../img/fb-icon.png" alt="Facebook Link"/></a>
-            <a href="https://www.twitter.com/PortAISociety/" target="_blank"><img class="social" src="../../../../img/tw-icon.png" alt="Twitter Link"/></a>
-            <a href="https://instagram.com/PortAISoc/" target="_blank"><img class="social" src="../../../../img/ig-icon.png" alt="Instagram Link"></a>
-            <a href="https://www.github.com/PortAISociety/" target="_blank"><img class="social" src="../../../../img/gh-icon.png" alt="GitHub Link"/></a>
-            <a href="https://discord.gg/xbW7n8f" target="_blank"><img class="social" src="../../../../img/ds.png" alt="Discord Link"/></a>
-            <a href="https://www.linkedin.com/company/PortAISociety/" target="_blank"><img class="social" src="../../../../img/li-icon.png" alt="LinkedIn Link"/></a>
-        </footer>
-</div>
-</html>
+    
+</article>

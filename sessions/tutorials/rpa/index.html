@@ -1,3 +1,125 @@
+---
+title: Robotic Process Automation
+layout: default
+stylesheet:
+- /css/altmain.css
+- /css/prism.css
+---
+<script src="/js/prism.js"></script>
+<article class="margin-end">
+    <h2>Objective</h2>
+    <p>The goal of this session is to build a program that is able to analyse a website and output what it believes the website is about.</p>
+    <h2>Installation & Setup</h2>
+    <p>As always, we're using <a href="https://www.python.org/downloads/">Python3</a>. If you have not already downloaded and installed Python 3, please let one of the committee know - you will need it for future sessions to it's best we sort out any installation problems now.</p>
+    <p>For this session, we will also need to grab a few libraries. For this, we are going to need to open a Command Prompt or Terminal (depending on your Operating System) and run the following commands individually:</p>
+    <pre><code class="language-">pip install nltk</code></pre>
+    <pre><code class="language-">pip install beautifulsoup4</code></pre>
+    <pre><code class="language-">pip install html5lib</code></pre>
+    <p>Again, if any of these commands do not work please let the committee know now so that we can resolve these issues. We're going to be using pip installs in the majority of sessions as it is an incredibly simple and useful tool so we need to ensure everyone has it up and working.</p>
+    <h2>Step by Step guide</h2>
+    <h3>Importing libraries</h3>
+    <p>Once you've installed the necessary libraries (see the Installation & Setup section), it's time to start programming. First, open up a Python IDE of your choice and create a new Python file.</p>
+    <p>At the top of the page, we need to import all of the libraries that we just installed into our file so that we can use them later on. Go ahead and copy the following at the top of the file:</p>
+    <pre><code class="language-python">import urllib.request
+from bs4 import BeautifulSoup
+from nltk.corpus import stopwords
+import nltk
+import operator</code></pre>
+    <h3>Downloading the web page</h3>
+    <p>With the libraries imported, we need to start using them. The first task is to take a page from the internet and turn it into a format that our code can read.</p>
+    <p>To do this, we're going to use URLLib. URLLib is a built-in Python library that has a range of different functions related to accessing internet pages - one of which being downloading HTML pages. For those of you unfamiliar, most internet pages use a "markup language" called HTML (or HyperText Markdown Language) to determine the contents of a web page. It works on a system of tags such as <code class="language-html">&lt;header&gt;</code>, <code class="language-html">&lt;body&gt;</code> and <code class="language-html">&lt;footer&gt;</code>.</p>
+    <p>Copy and paste the following code into your program underneath the import statements. Run it.</p>
+    <pre><code class="language-python"># Get HTML document from URL
+# returns HTML file string
+def getPage(url: str):
+response = urllib.request.urlopen(url)
+return response.read()
+
+
+print(getPage('https://en.wikipedia.org/wiki/Tesla,_Inc.'))</code></pre>
+    <h3>Cleaning up</h3>
+    <p>From the output, you can see a rough outline of the page. This isn't in a particularly useful format as it still has all of the tags and other "extra" code in it - we're only interested in the actual text content of the page.</p>
+    <p>To clean up this output, we're going to use the library "Beautiful Soup". The idea is that Beautiful Soup will take the HTML file and take out all of the tags and code, returning a "Beautiful Soup" of text.</p>
+    <p>First, remove the line <code class="language-python">print(getPage('https://en.wikipedia.org/wiki/Tesla,_Inc.'))</code> from your code. We don't need that any more.</p>
+    <p>Next, copy and paste the following code into your program underneath the code from before. Make sure to leave a couple lines between your old code and this new code. Run it.</p>
+    <pre><code class="language-python"># Cleanup HTML to just get the text
+# pip install beautifulsoup4
+# pip install html5lib
+def toSoup(html):
+soup = BeautifulSoup(html, 'html5lib')
+return soup.get_text(strip=True)
+
+
+print(toSoup(getPage('https://en.wikipedia.org/wiki/Tesla,_Inc.')))</code></pre>
+    <p>Looking at the output, we can see that <em>most</em> of the HTML has been cleaned up. There's still some extra code in there but it's good enough for today. In reality, you should always get your input data as clean as possible when doing any form of machine learning or language processing.</p>
+    <p>One last thing we should do is to convert this wall of text output into an even more usable format. We can do this by breaking the output into individual words - or "tokens" - and store those in a list.</p>
+    <p>First, delete the line <code class="language-python">print(toSoup(getPage('https://en.wikipedia.org/wiki/Tesla,_Inc.')))</code> from your code.</p>
+    <p>Then, replace it with the code below. Run it.</p>
+    <pre><code class="language-python">text = toSoup(getPage('https://en.wikipedia.org/wiki/Tesla,_Inc.'))
+tokens = [t for t in text.split()]
+print(tokens)</code></pre>
+    <h3>Interpreting meaning</h3>
+    <p>This may look worse to you for now, but bare with me. We now need to write a function that counts how many times each of those tokens occur in the list.</p>
+    <p>It's also helpful to remove 'stopwords' from the list. Stopwords are words like 'and', 'the' etc.</p>
+    <p>Remove the code that you just inserted and replace it with the following to complete the program. Run it.</p>
+    <pre><code class="language-python"># Count the frequency of tokens within the page
+# Returns first X most frequent tokens
+# pip install nltk
+def countWords(tokens, num_to_get):
+# Remove 'stopwords' from the page - words such as 'and', 'the', etc;
+sr = stopwords.words('english')
+clean_tokens = tokens[:]
+for token in tokens:
+if token in sr:
+    clean_tokens.remove(token)
+
+# Use the NLTK to return a dictionary of the token and the number of occurrences
+freq = nltk.FreqDist(clean_tokens)
+items = freq.items()
+
+# Sort the dictionary by the number of occurrences, in descending order
+sorted_items = sorted(items, key=operator.itemgetter(1))
+sorted_items.reverse()
+
+# Add the X most common words to a list
+ret = []
+sorted_list = list(sorted_items)
+for i in range(num_to_get):
+ret.append(sorted_list[i])
+
+# Return that list
+return ret
+
+
+if __name__ == '__main__':
+# Print out HTML page, with HTML included
+html = getPage('https://en.wikipedia.org/wiki/Tesla,_Inc.')
+
+# Cleanup HTML to just get the text
+text = toSoup(html)
+
+# Convert text into tokens
+tokens = [t for t in text.split()]
+
+# Count the frequency of words
+words = countWords(tokens, 10)
+for key, val in words:
+print(str(key) + ': ' + str(val))
+
+# Print statement about what the page is about
+print("\nI'm thinking that this page is about " + str(words[0][0]) + ".")</code></pre>
+    <p>Ta da! The program now outputs the 10 most frequent tokens on the page along with how many times they occur. It then takes the token that occurs most frequently and declares that it believes the page is about that token.</p>
+    <p>Try playing around with different web pages or check out the challenges below.</p>
+    <p>If you want to download my code in full, you can go over to <a href="https://github.com/PortAISociety/nlp-semantic-analysis">https://github.com/PortAISociety/nlp-semantic-analysis</a>.</p>
+    <h2>Further adaptation</h2>
+    <p>Feeling confident? Feel free to tweak this code or try it on a different webpage. Here are some ideas to get you started:</p>
+    <ul>
+        <li>Tokens are case-sensitive at the moment. Does changing them to not be case-sensitive make a difference? (hint: convert all of the tokens into lower-case)</li>
+        <li>There are still some extra tokens in the dataset that shouldn't be there - can you remove those? (hint: try using a different parser, or write your own parser algorithm)</li>
+        <li>Is there a way to quantify how confident our program is that the outputted value is correct?</li>
+    </ul>
+    <p>If you do any of the above challenges let us know. We want to see them done!</p>
+</article>
 <!DOCTYPE html>
 <html lang="en">
 <head>

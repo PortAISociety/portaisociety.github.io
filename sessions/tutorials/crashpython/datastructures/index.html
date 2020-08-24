@@ -1,93 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Artificial Intelligence & Robotics Society, University of Portsmouth</title>
-    <meta name="description" content="PortAISociety website.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../../../../img/favicon.png">
-    <link rel="stylesheet" href="../../../../css/prism.css">
-    <link rel="stylesheet" href="../../../../css/altmain.css">
-</head>
-<div id="particles">
-    <script src="../../../../js/prism.js"></script>
-    <script src="../../../../js/particles.js"></script>
-    <script src="../../../../js/app.js"></script>
+---
+title: 'Part 6: Data Structures'
+layout: default
+stylesheet:
+- /css/altmain.css
+- /css/prism.css
+---
+<script src="/js/prism.js"></script>
+<article class="margin-end">
 
-    <nav>
-        <a href="../../../../">Home</a>
-        <a href="../../../../members">Committee Team</a>
-        <b><a href="../../../">Sessions</a></b>
-        <a href="../../../../researchseminars">Research Seminars</a>
-        <a href="../../../../aboutus">About us</a>
-        <a href="https://membership.upsu.net/group/artificial-intelligence-robotics" target="_blank">Join us!</a>
-    </nav>
+    <a href="../../crashpython">Back to course contents</a>
 
-    <header id="home">
-        <h1>Part 6: Data Structures</h1>
-    </header>
+    <h2>Video</h2>
+    <iframe src="https://drive.google.com/file/d/14erFeBF7gyRTzb6AvyBfTY7C5l69pdGz/preview" width="640" height="480"></iframe>
 
-    <main>
-        <article class="margin-end">
+    <h2>Summary</h2>
+    <p>A dictionary is a collection of keys and values that allow you to quickly and directly reference information. Dictionaries are defined using curly brackets, and are referenced in the same way as lists but using keys instead of index numbers.</p>
+    <p>An object is a store for data and functions. The data is specific to the object and cannot be accessed directly outside of it. An object is defined using the ‘class’ keyword.</p>
 
-            <a href="../../crashpython">Back to course contents</a>
-
-            <h2>Video</h2>
-            <iframe src="https://drive.google.com/file/d/14erFeBF7gyRTzb6AvyBfTY7C5l69pdGz/preview" width="640" height="480"></iframe>
-
-            <h2>Summary</h2>
-            <p>A dictionary is a collection of keys and values that allow you to quickly and directly reference information. Dictionaries are defined using curly brackets, and are referenced in the same way as lists but using keys instead of index numbers.</p>
-            <p>An object is a store for data and functions. The data is specific to the object and cannot be accessed directly outside of it. An object is defined using the ‘class’ keyword.</p>
-
-            <h2>Examples</h2>
-            <pre><code class="language-python">
+    <h2>Examples</h2>
+    <pre><code class="language-python">
 # Class example
 class Item(object):
-    def __init__(self, name, parts, cost_per_part):
-        self.name = name
-        self.parts = parts
-        self.cost_per_part = cost_per_part
-        self.age = 0
+def __init__(self, name, parts, cost_per_part):
+self.name = name
+self.parts = parts
+self.cost_per_part = cost_per_part
+self.age = 0
 
-    def get_name(self):
-        return self.name
+def get_name(self):
+return self.name
 
-    def get_cost(self, discount):
-        total = self.cost_per_part * self.parts * discount
-        return total
+def get_cost(self, discount):
+total = self.cost_per_part * self.parts * discount
+return total
 
-    def set_parts(self, new_parts):
-        self.parts = new_parts
-            </code></pre>
-            <pre><code class="language-python">
+def set_parts(self, new_parts):
+self.parts = new_parts
+    </code></pre>
+    <pre><code class="language-python">
 # Pass example
 def test():
-    pass
-            </code></pre>
+pass
+    </code></pre>
 
-            <h2>Exercises</h2>
-            <ol>
-                <li>
-                    <p>Santa Claus has to deliver presents to a lot of children on Christmas Night. Each child has a name and age, and is allowed one present, which they have politely written to him to ask for. Santa also needs to keep track of whether they’ve been naughty or nice and whether he’s visited them yet. Create a class to help Santa keep track of all this information.</p>
-                </li>
-                <li>
-                    <p>Once Santa has visited a child, he needs to be able to tick them off his list. Create a function within the class you have just made to mark off when he’s visited that child.</p>
-                </li>
-                <li>
-                    <p>Finally, all these children need to be put on a list for Santa to check once or twice whilst out on deliveries. But a list would be too long to search through. Make a dictionary to hold his list and populate it with children. What could the key be for each child value?</p>
-                </li>
-            </ol>
-            
-        </article>
-    </main>
-
-    <footer>
-            <a href="https://www.facebook.com/PortAISociety/" target="_blank"><img class="social" src="../../../../img/fb-icon.png" alt="Facebook Link"/></a>
-            <a href="https://www.twitter.com/PortAISociety/" target="_blank"><img class="social" src="../../../../img/tw-icon.png" alt="Twitter Link"/></a>
-            <a href="https://instagram.com/PortAISoc/" target="_blank"><img class="social" src="../../../../img/ig-icon.png" alt="Instagram Link"></a>
-            <a href="https://www.github.com/PortAISociety/" target="_blank"><img class="social" src="../../../../img/gh-icon.png" alt="GitHub Link"/></a>
-            <a href="https://discord.gg/xbW7n8f" target="_blank"><img class="social" src="../../../../img/ds.png" alt="Discord Link"/></a>
-            <a href="https://www.linkedin.com/company/PortAISociety/" target="_blank"><img class="social" src="../../../../img/li-icon.png" alt="LinkedIn Link"/></a>
-    </footer>
-</div>
-</html>
+    <h2>Exercises</h2>
+    <ol>
+        <li>
+            <p>Santa Claus has to deliver presents to a lot of children on Christmas Night. Each child has a name and age, and is allowed one present, which they have politely written to him to ask for. Santa also needs to keep track of whether they’ve been naughty or nice and whether he’s visited them yet. Create a class to help Santa keep track of all this information.</p>
+        </li>
+        <li>
+            <p>Once Santa has visited a child, he needs to be able to tick them off his list. Create a function within the class you have just made to mark off when he’s visited that child.</p>
+        </li>
+        <li>
+            <p>Finally, all these children need to be put on a list for Santa to check once or twice whilst out on deliveries. But a list would be too long to search through. Make a dictionary to hold his list and populate it with children. What could the key be for each child value?</p>
+        </li>
+    </ol>
+    
+</article>

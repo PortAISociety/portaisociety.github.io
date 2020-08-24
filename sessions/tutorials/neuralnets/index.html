@@ -1,109 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Artificial Intelligence & Robotics Society, University of Portsmouth</title>
-    <meta name="description" content="PortAISociety website.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../../../img/favicon.png">
-    <link rel="stylesheet" href="../../../css/prism.css">
-    <link rel="stylesheet" href="../../../css/altmain.css">
-</head>
-<div id="particles">
-    <script src="../../../js/prism.js"></script>
-    <script src="../../../js/particles.js"></script>
-    <script src="../../../js/app.js"></script>
+---
+title: Neural Networks
+layout: default
+stylesheet:
+- /css/altmain.css
+- /css/prism.css
+---
+<script src="/js/prism.js"></script>
+<article class="margin-end">
 
-    <nav>
-        <a href="../../../">Home</a>
-        <a href="../../../members">Committee Team</a>
-        <b><a href="../../">Sessions</a></b>
-        <a href="../../../researchseminars">Research Seminars</a>
-        <a href="../../../aboutus">About us</a>
-		<a href="../../../projects">Projects</a>
-        <a href="https://membership.upsu.net/group/artificial-intelligence-robotics" target="_blank">Join us!</a>
-    </nav>
+    <div class="session-information-green">
+        <p>You <b>will need</b> the following zip file for this tutorial. Please download it now by <a href="https://drive.google.com/open?id=1fMCYHBMB5YwU8khAdbXfbiBuprjPgE9y">clicking here</a>.</p>
+    </div>
 
-    <header id="home">
-        <h1>Neural Networks</h1>
-    </header>
-
-    <main>
-        <article class="margin-end">
-
-            <div class="session-information-green">
-                <p>You <b>will need</b> the following zip file for this tutorial. Please download it now by <a href="https://drive.google.com/open?id=1fMCYHBMB5YwU8khAdbXfbiBuprjPgE9y">clicking here</a>.</p>
-            </div>
-
-            <h2>Objective</h2>
-            <p>The aim of this session is to teach you about neural networks - simulated "brains" that learn what output is suitable by studying training data.</p>
-            
-            <h2>Installation & Setup</h2>
-            <p>As always, we're using <a href="https://www.python.org/downloads/">Python3</a>. We will be using Python for the foreseeable future, so please ensure you have it installed.</p>
-            <p>In this session we will be using two Python libraries: TensorFlow and textgenrnn. Both can be installed from the command prompt or terminal using the following commands:</p>
-            <pre><code class="language-">pip install tensorflow</code></pre>
-            <pre><code class="language-">pip install textgenrnn</code></pre>
-            <p>As always, if you run into issues when installing these libraries, please ask a committee member for help.</p>
-            <p>You will also need to download some test data. This comes in the form of compressed text files which can be downloaded <a href="https://drive.google.com/open?id=1fMCYHBMB5YwU8khAdbXfbiBuprjPgE9y">from our Google Drive</a>. Please make sure to decompress the folder to an easy-to-reach location on your computer.</p>
-            <p>This practical is based on the example code from <a href="https://github.com/minimaxir/textgenrnn">the textgenrnn Github repository</a>.</p>
-            
-            <h2>Let's Get Coding!</h2>
-            <p>Last week we learned about decision trees - a structure that queries some input data with basic questions and decisions to produce a suitable output.</p>
-            <p>This week, we're learning about neural networks, which are a step up from a decision tree. A neural network takes some input data and passes it through a series of "neurons" to produce some kind of output.</p>
-            <p>Each neuron is actually a mathematical function that alters the input data. The result is then passed to the next neurons.</p>
-            <p>To demonstrate, let's have a play with the textgenrnn library. textgenrnn is a simple-to-use library built using <a href="https://www.tensorflow.org/">TensorFlow</a> and <a href="https://keras.io/">Keras</a>, two very well-known and versatile machine learning libraries.</p>
-            <p>First you'll need to create a new Python file and import the textgenrnn class from the textgenrnn module.</p>
-            <pre><code class="language-python">
+    <h2>Objective</h2>
+    <p>The aim of this session is to teach you about neural networks - simulated "brains" that learn what output is suitable by studying training data.</p>
+    
+    <h2>Installation & Setup</h2>
+    <p>As always, we're using <a href="https://www.python.org/downloads/">Python3</a>. We will be using Python for the foreseeable future, so please ensure you have it installed.</p>
+    <p>In this session we will be using two Python libraries: TensorFlow and textgenrnn. Both can be installed from the command prompt or terminal using the following commands:</p>
+    <pre><code class="language-">pip install tensorflow</code></pre>
+    <pre><code class="language-">pip install textgenrnn</code></pre>
+    <p>As always, if you run into issues when installing these libraries, please ask a committee member for help.</p>
+    <p>You will also need to download some test data. This comes in the form of compressed text files which can be downloaded <a href="https://drive.google.com/open?id=1fMCYHBMB5YwU8khAdbXfbiBuprjPgE9y">from our Google Drive</a>. Please make sure to decompress the folder to an easy-to-reach location on your computer.</p>
+    <p>This practical is based on the example code from <a href="https://github.com/minimaxir/textgenrnn">the textgenrnn Github repository</a>.</p>
+    
+    <h2>Let's Get Coding!</h2>
+    <p>Last week we learned about decision trees - a structure that queries some input data with basic questions and decisions to produce a suitable output.</p>
+    <p>This week, we're learning about neural networks, which are a step up from a decision tree. A neural network takes some input data and passes it through a series of "neurons" to produce some kind of output.</p>
+    <p>Each neuron is actually a mathematical function that alters the input data. The result is then passed to the next neurons.</p>
+    <p>To demonstrate, let's have a play with the textgenrnn library. textgenrnn is a simple-to-use library built using <a href="https://www.tensorflow.org/">TensorFlow</a> and <a href="https://keras.io/">Keras</a>, two very well-known and versatile machine learning libraries.</p>
+    <p>First you'll need to create a new Python file and import the textgenrnn class from the textgenrnn module.</p>
+    <pre><code class="language-python">
 # Import textgenrnn from the module
 from textgenrnn import textgenrnn
-            </code></pre>
-            <p>This will allow you to access the library's resources.</p>
-            <p>Next, you need to create a new instance of the textgenrnn class. This is done very simply, as shown below. Remember to store it inside a variable, or it will not work.</p>
-            <pre><code class="language-python">
+    </code></pre>
+    <p>This will allow you to access the library's resources.</p>
+    <p>Next, you need to create a new instance of the textgenrnn class. This is done very simply, as shown below. Remember to store it inside a variable, or it will not work.</p>
+    <pre><code class="language-python">
 # Create an instance of the textgenrnn object
 txtgn = textgenrnn()
-            </code></pre>
-            <p>Doing this creates a default neural network that can make very basic, but very random, decisions. Add the following code and then run the file to see what I mean.</p>
-            <pre><code class="language-python">
+    </code></pre>
+    <p>Doing this creates a default neural network that can make very basic, but very random, decisions. Add the following code and then run the file to see what I mean.</p>
+    <pre><code class="language-python">
 # Generate some text
 txtgn.generate()
-            </code></pre>
-            <p>Well done! You have created your first neural net. But it outputs things like this:</p>
-            <pre><code class="language-">
+    </code></pre>
+    <p>Well done! You have created your first neural net. But it outputs things like this:</p>
+    <pre><code class="language-">
 Bought my damage community is three students.
 What is your finance was selling the background and contest it will stop seeing it about the other way this?
 Don't stop twittering a person to come on the start of the same shotgun and have no idea what to do anything!
-            </code></pre>
-            <p>There are words in an order and it even knows to end a sentence with punctuation! But it doesn't make any sense. What it needs is some training on how to write properly. So let's give it some examples!</p>
-            <p>For this you will need to have downloaded the <a href="https://drive.google.com/open?id=1fMCYHBMB5YwU8khAdbXfbiBuprjPgE9y">datasets zip file</a> from our Google Drive. Make sure to decompress it and put the folder in a place that you can get to easily.</p>
-            <p>Add the following code to your file.</p>
-            <pre><code class="language-python">
+    </code></pre>
+    <p>There are words in an order and it even knows to end a sentence with punctuation! But it doesn't make any sense. What it needs is some training on how to write properly. So let's give it some examples!</p>
+    <p>For this you will need to have downloaded the <a href="https://drive.google.com/open?id=1fMCYHBMB5YwU8khAdbXfbiBuprjPgE9y">datasets zip file</a> from our Google Drive. Make sure to decompress it and put the folder in a place that you can get to easily.</p>
+    <p>Add the following code to your file.</p>
+    <pre><code class="language-python">
 # Train the neural network on some data
 txtgn.train_from_file('path_to_your_dataset_folder/datasets/hacker_news_2000.txt', num_epochs=1)
 
 # Generate some text based on the trained network
 txtgn.generate()
-            </code></pre>
-            <p>For this to work you will need to get the filepath for your datasets folder. This is done differently between Mac, Windows, and Linux devices, so if you need any help, please ask a committee member.
-                Where it says <code class="language-python">'path_to_your_dataset_folder'</code>, put the file path for this folder. Otherwise, Python will not be able to access the training data.
-            </p>
-            <p>When you run this code, it will take longer than usual. This is because the network is being trained. Each neuron has a weight that can be adjusted. By adjusting the weight of each neuron and the connections they have with each other, you can fine-tune the network to become better at what it does.</p>
-            <p>That's the important thing to remember: Neural networks are very good at doing one thing.</p>
+    </code></pre>
+    <p>For this to work you will need to get the filepath for your datasets folder. This is done differently between Mac, Windows, and Linux devices, so if you need any help, please ask a committee member.
+        Where it says <code class="language-python">'path_to_your_dataset_folder'</code>, put the file path for this folder. Otherwise, Python will not be able to access the training data.
+    </p>
+    <p>When you run this code, it will take longer than usual. This is because the network is being trained. Each neuron has a weight that can be adjusted. By adjusting the weight of each neuron and the connections they have with each other, you can fine-tune the network to become better at what it does.</p>
+    <p>That's the important thing to remember: Neural networks are very good at doing one thing.</p>
 
-            <h2>Going Further</h2>
-            <p>So, how could this be used?</p>
-            <p>Well, it is already being used by a lot of people to do some cool things. Both <a href="https://www.youtube.com/watch?v=BjngNWP9C5s">CollegeHumor</a> and <a href="https://www.youtube.com/watch?v=Ke6gD8A37WE">RoosterTeeth</a> have made sketches written by neural networks.</p>
-            <p><a href="https://twitter.com/minimaxir">Max Woolf</a>, creator of textgenrnn has done some projects involving neural networks. Check out the <a href="https://github.com/minimaxir/textgenrnn#articlesprojects-using-textgenrnn">Articles/Projects</a> section of the textgenrnn repository.</p>
-        </article>
-    </main>
-
-    <footer>
-        <a href="https://www.facebook.com/PortAISociety/" target="_blank"><img class="social" src="../../../img/fb-icon.png" alt="Facebook Link"/></a>
-        <a href="https://www.twitter.com/PortAISociety/" target="_blank"><img class="social" src="../../../img/tw-icon.png" alt="Twitter Link"/></a>
-        <a href="https://instagram.com/PortAISoc/" target="_blank"><img class="social" src="../../../img/ig-icon.png" alt="Instagram Link"></a>
-        <a href="https://www.github.com/PortAISociety/" target="_blank"><img class="social" src="../../../img/gh-icon.png" alt="GitHub Link"/></a>
-        <a href="https://discord.gg/xbW7n8f" target="_blank"><img class="social" src="../../../img/ds.png" alt="Discord Link"/></a>
-        <a href="https://www.linkedin.com/company/portaisociety/about/" target="_blank"><img class="social" src="../../../img/li-icon.png" alt="LinkedIn Link"/></a>
-    </footer>
-</div>
-</html>
+    <h2>Going Further</h2>
+    <p>So, how could this be used?</p>
+    <p>Well, it is already being used by a lot of people to do some cool things. Both <a href="https://www.youtube.com/watch?v=BjngNWP9C5s">CollegeHumor</a> and <a href="https://www.youtube.com/watch?v=Ke6gD8A37WE">RoosterTeeth</a> have made sketches written by neural networks.</p>
+    <p><a href="https://twitter.com/minimaxir">Max Woolf</a>, creator of textgenrnn has done some projects involving neural networks. Check out the <a href="https://github.com/minimaxir/textgenrnn#articlesprojects-using-textgenrnn">Articles/Projects</a> section of the textgenrnn repository.</p>
+</article>
