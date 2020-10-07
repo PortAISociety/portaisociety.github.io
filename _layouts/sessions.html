@@ -18,12 +18,12 @@ layout: default
                 <p><b>Speakers: {{ session.speakers }}</b></p>
                 <p><b>Date: {{ session.session_date }}</b></p>
                 <p><b>Time: {{ session.session_time }}</b></p>
-                <p><b>Location: {% if session.session_location_link %}<a href="{{ session.session_location_link }}" target="blank">{{ session.session_location }}</a>{% else %}{{ session.session_location }}{% endif %}</b></p>
+                <p><b>Location: {% if session.session_location_link %}<a href="{{ session.session_location_link }}" target="_blank">{{ session.session_location }}</a>{% else %}{{ session.session_location }}{% endif %}</b></p>
             </div>
             {% if session.links %}
             <div class="session-information-green">
                 {% for link in session.links %}
-                <p><b>{{ link.type }}:</b> <a href="{{ link.url }}" target="blank">{{ link.text }}</a></p>
+                <p><b>{{ link.type }}:</b> <a href="{{ link.url }}" target="_blank">{{ link.text }}</a></p>
                 {% endfor %}
             </div>
             {% endif %}
