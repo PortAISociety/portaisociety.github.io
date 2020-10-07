@@ -5,8 +5,8 @@ title: "Introduction and Tech test"
 speakers: Zac Wilson
 session_date: 07/10/2020
 session_time: 16:00-17:00
-session_location: Google Meet
-session_location_link: https://meet.google.com/qvo-ykit-ixn?hs=122&authuser=1
+session_location: Google Meet https://meet.google.com/qvo-ykit-ixn
+session_location_link: https://meet.google.com/qvo-ykit-ixn
 links:
 - type: Presentation slides
   text: Session 0
