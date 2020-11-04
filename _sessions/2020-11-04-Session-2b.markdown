@@ -1,0 +1,15 @@
+---
+session: Session 2b
+block: 2020-2021
+title: "Computer Vision Discussion"
+speakers: Aidan Church
+session_date: 04/11/2020
+session_time: 16:00-17:00
+session_location: Google Meet https://meet.google.com/rtu-ztdp-ygz
+session_location_link: https://meet.google.com/rtu-ztdp-ygz
+links:
+- type: Presentation slides
+  text: Session 2b
+  url: https://drive.google.com/file/d/1NW3nPnVknLo6PZnPQhWqtif9gS5bPLFg/view?usp=sharing
+---
+Today we'll be looking at flow control in Python.
