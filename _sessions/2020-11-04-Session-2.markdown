@@ -1,0 +1,15 @@
+---
+session: Session 2
+block: 2020-2021
+title: "Python - Flow Control"
+speakers: Zac Wilson
+session_date: 04/11/2020
+session_time: 15:00-16:00
+session_location: Google Meet https://meet.google.com/rtu-ztdp-ygz
+session_location_link: https://meet.google.com/rtu-ztdp-ygz
+links:
+- type: Presentation slides
+  text: Session 2
+  url: https://docs.google.com/presentation/d/1kqaDrWKVVBrVFkCX3-mWPdaw03NxnehQe0LmongeWYI/edit?usp=sharing
+---
+Today we'll be looking at flow control in Python.
