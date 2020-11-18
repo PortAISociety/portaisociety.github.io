@@ -1,0 +1,15 @@
+---
+session: Session 3
+block: 2020-2021
+title: "Computer Vision Discussion"
+speakers: Zac Wilson, Aidan Church
+session_date: 18/11/2020
+session_time: 15:00-17:00
+session_location: Google Meet https://meet.google.com/pge-ekan-vpw
+session_location_link: https://meet.google.com/pge-ekan-vpw
+links:
+- type: Presentation slides
+  text: Session 3
+  url: https://drive.google.com/file/d/1tr4I7Ip4sTSsRqIsfAnlQZS4xO_H9odU/view?usp=sharing
+---
+The first half of this session will be a practical look at GUI programming in Python. The second half will be a talk on the technological singularity.
