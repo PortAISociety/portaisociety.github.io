@@ -1,0 +1,13 @@
+---
+session: Session 4
+block: 2020-2021
+title: "Python GUI Programming and Introduction to Arduino"
+speakers: Zac Wilson, Aidan Church
+session_date: 25/11/2020
+session_time: 15:00-17:00
+session_location: Google Meet https://meet.google.com/qem-tqha-tic
+session_location_link: https://meet.google.com/qem-tqha-tic
+---
+The first half of this session will continue our GUI programming project in Python.
+The second half will be an introduction to embedded systems and electronics using
+Arduino.
