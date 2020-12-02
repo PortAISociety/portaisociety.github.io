@@ -1,0 +1,12 @@
+---
+session: Session 5
+block: 2020-2021
+title: "Python GUI Programming"
+speakers: Zac Wilson
+session_date: 02/12/2020
+session_time: 15:00-17:00
+session_location: Google Meet https://meet.google.com/owe-rfxz-eyb
+session_location_link: https://meet.google.com/owe-rfxz-eyb
+---
+Today we continue our GUI messaging application in Python, implementing the
+messaging features.
